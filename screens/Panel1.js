@@ -115,10 +115,10 @@ class Panel1 extends Component {
                         </View>
 
                         <View style={Styles.pnbContainer}>
-                            <view style={{ flexDirection: 'row' }}>
+                            <View style={{ flexDirection: 'row' }}>
                                 <Text style={{ fontSize: 18 }}>Places near by</Text>
                                 <Ionicons style={{ textAlign: 'flex-end' }} name="caret-forward-outline" size={24} color="black" />
-                            </view>
+                            </View>
                             <ScrollView
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
