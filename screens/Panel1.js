@@ -117,7 +117,7 @@ class Panel1 extends Component {
                         <View style={Styles.pnbContainer}>
                             <View style={{ flexDirection: 'row' }}>
                                 <Text style={{ fontSize: 18 }}>Places near by</Text>
-                                <Ionicons style={{ textAlign: 'flex-end' }} name="caret-forward-outline" size={24} color="black" />
+                                <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="black" />
                             </View>
                             <ScrollView
                                 horizontal={true}
@@ -224,13 +224,14 @@ const Styles = StyleSheet.create({
         flexDirection: 'column',
     },
     headerContainer: {
-        flex: 1,
+        flex: 3/2,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
     },
     headerTopContainer: {
-        flex: 3,
+        paddingTop: 10,
+        flex: 4,
         backgroundColor: '#ffcd00',
         width: '100%',
         display: 'flex',
@@ -251,14 +252,15 @@ const Styles = StyleSheet.create({
         flexDirection: 'row'
     },
     headerSearchContainer: {
-        flex: 2,
+        flex: 3/2,
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ffcd00'
     },
     headerSearchBar: {
-        // color: '#91d7c5'
+        width: '80%',
+        height: 40
     },
     headerCurveContainer: {
         flex: 1,
@@ -274,7 +276,7 @@ const Styles = StyleSheet.create({
         height: '100%',
         display: 'flex',
         width: '100%',
-        overflowY: 'scroll'
+        overflow: 'scroll'
     },
     sportsContainer: {
         width: '100%',
@@ -321,12 +323,12 @@ const Styles = StyleSheet.create({
     },
     svhButton: {
         backgroundColor: '#FFCD00',
-        height: 50,
+        height: 45,
         width: 100,
         alignItems: 'center',
         borderRadius: 5,
-        marginLeft: 15,
-        marginRight: 'auto',
+        marginLeft: 12.5,
+        marginRight: 12.5,
         justifyContent: 'center',
     },
     svhbuttonText: {
