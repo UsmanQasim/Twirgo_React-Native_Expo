@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { SafeAreaView, View, Text, ImageBackground, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const image = { uri: "https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHw%3D&w=1000&q=80" };
-
 class Screen1 extends Component {
     state = {
         password: '',
@@ -25,7 +23,7 @@ class Screen1 extends Component {
     };
     render() {
         return (
-            <ImageBackground source={image} style={Styles.image}>
+            <ImageBackground source={require('../assets/backgroundimage.jpg')} style={Styles.image}>
                 <SafeAreaView style={Styles.container}>
                     <View style={Styles.topContainer}>
                         <Text style={Styles.greetText}>Twirgo</Text>

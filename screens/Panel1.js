@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-//import { createStackNavigator } from 'react-navigation-stack';
 import { Searchbar } from 'react-native-paper';
-import { SafeAreaView, View, Text, ImageBackground, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
+import { SafeAreaView, View, Text, ImageBackground, Image, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { Ionicons } from '@expo/vector-icons';
-import { AntDesign, EvilIcons, Octicons } from '@expo/vector-icons';
-//import NavigationBar from 'react-native-navbar';
+import { AntDesign, EvilIcons, Octicons, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 class Panel1 extends Component {
@@ -17,37 +14,201 @@ class Panel1 extends Component {
     };
     render() {
         return (
+
             <SafeAreaView style={Styles.container}>
-                <View style={Styles.upperContainer}>
-                    <View style={Styles.logoArea}>
-                        <Octicons name="three-bars" size={40} color="white" />
-                        <Text
-                            style={Styles.logotext}
-                        >
-                            Twirgo
-                        </Text>
-                        <AntDesign name="message1" size={35} color="white" />
-                        <EvilIcons name="bell" size={42} color="white" />
+                {
+                    // HEADER HERE 
+                }
+                <View style={Styles.headerContainer}>
+                    <View style={Styles.headerTopContainer}>
+                        <TouchableOpacity style={Styles.headerBtn}>
+                            <Octicons name="three-bars" size={40} color="white" />
+                        </TouchableOpacity>
+                        <Text style={Styles.headerText}>Twirgo</Text>
+                        <View style={Styles.headerIconContainer}>
+                            <TouchableOpacity style={Styles.headerBtn}>
+                                <AntDesign name="message1" size={30} color="white" />
+                            </TouchableOpacity>
+                            <TouchableOpacity style={Styles.headerBtn}>
+                                <EvilIcons name="bell" size={42} color="white" />
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                    <Searchbar
-                        style={Styles.search}
-                        placeholder="Search"
-                        onChangeText={query => { this.setState({ firstQuery: query }); }}
-                    //value={firstQuery}
-                    />
+                    <View style={Styles.headerSearchContainer}>
+                        <Searchbar
+                            style={Styles.headerSearchBar}
+                            placeholder="Search"
+                            onChangeText={query => { this.setState({ firstQuery: query }); }}
+                        />
+                    </View>
+                    <View style={Styles.headerCurveContainer}></View>
                 </View>
 
+                {
+                    // CONTENT HERE
+                }
+                <View style={Styles.mainSectionContainer}>
+                    <ScrollView style={Styles.mainSection}>
+                        {
+                            // SPORTS CONTAINER
+                        }
+                        <View style={Styles.sportsContainer}>
+                            {/* SPORTS ICONS */}
+                            <View style={Styles.sportsRow}>
+                                <View style={Styles.sportItem}>
+                                    <MaterialCommunityIcons name="weight-lifter" size={50} color="#27ab67" />
+                                    <Text>Gym</Text>
+                                </View>
+                                <View style={Styles.sportItem}>
+                                    <MaterialCommunityIcons name="soccer" size={50} color="#27ab67" />
+                                    <Text>Soccer</Text>
+                                </View>
+                                <View style={Styles.sportItem}>
+                                    <MaterialCommunityIcons name="tennis" size={50} color="#27ab67" />
+                                    <Text>Tennis</Text>
+                                </View>
+                            </View>
+                            <View style={Styles.sportsRow}>
+                                <View style={Styles.sportItem}>
+                                    <MaterialCommunityIcons name="basketball-hoop-outline" size={50} color="#27ab67" />
+                                    <Text>Basketball</Text>
+                                </View>
+                                <View style={Styles.sportItem}>
+                                    <MaterialCommunityIcons name="swim" size={50} color="#27ab67" />
+                                    <Text>Swimming</Text>
+                                </View>
+                                <View style={Styles.sportItem}>
+                                    <MaterialCommunityIcons name="golf" size={50} color="#27ab67" />
+                                    <Text>Golf</Text>
+                                </View>
+                            </View>
+                            { /*OTHER SPORTS BUTTON*/}
+                            <TouchableOpacity style={Styles.otherSportsBtn}>
+                                <Text style={Styles.otherSportsBtnText}>Other Sports</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={Styles.scrollHorizontal}>
+                            <ScrollView
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                            >
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Boxing</Text>
+                                </TouchableOpacity>
 
-                <View style={Styles.middleContainer}>
-                    <ScrollView style={Styles.scrollView}>
-                        <Text >
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                            sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                            est laborum.
-                        </Text>
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Karate</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Dance</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Sports</Text>
+                                </TouchableOpacity>
+
+                                {/**ADD MORE BUTTON Here */}
+
+                            </ScrollView>
+
+                        </View>
+
+                        <View style={Styles.pnbContainer}>
+                            <view style={{ flexDirection: 'row' }}>
+                                <Text style={{ fontSize: 18 }}>Places near by</Text>
+                                <Ionicons style={{ textAlign: 'flex-end' }} name="caret-forward-outline" size={24} color="black" />
+                            </view>
+                            <ScrollView
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                            >
+                                <View style={Styles.pnbBottomContainer}>
+                                    <TouchableOpacity style={Styles.pnbButton}>
+
+                                        <Image
+                                            style={Styles.pnbImage}
+                                            source={require('../assets/backgroundimage.jpg')}
+                                        ></Image>
+                                        <Text style={{ fontSize: 15 }}>SomeText here...</Text>
+                                        <View>
+                                        <Text style={{alignSelf: 'flex-end' }}>Monthly</Text>
+                                        </View>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                            <AntDesign name="star" size={18} color="#ffcd00" />
+                                            <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
+                                            <Text style={{justifySelf: 'flex-end',fontSize: 15,}}>{'\t'} €55</Text>
+                                        </View>
+                                    </TouchableOpacity>
+
+
+                                </View>
+
+                                <View style={Styles.pnbBottomContainer}>
+                                    <TouchableOpacity style={Styles.pnbButton}>
+
+                                        <Image
+                                            style={Styles.pnbImage}
+                                            source={require('../assets/backgroundimage.jpg')}
+                                        ></Image>
+                                        <Text style={{ fontSize: 15 }}>SomeText here...</Text>
+                                        <View>
+                                        <Text style={{alignSelf: 'flex-end' }}>Monthly</Text>
+                                        </View>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                            <AntDesign name="star" size={18} color="#ffcd00" />
+                                            <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
+                                            <Text style={{justifySelf: 'flex-end',fontSize: 15,}}>{'\t'} €55</Text>
+                                        </View>
+                                    </TouchableOpacity>
+
+                                    
+                                </View>
+
+                                <View style={Styles.pnbBottomContainer}>
+                                    <TouchableOpacity style={Styles.pnbButton}>
+
+                                        <Image
+                                            style={Styles.pnbImage}
+                                            source={require('../assets/backgroundimage.jpg')}
+                                        ></Image>
+                                        <Text style={{ fontSize: 15 }}>SomeText here...</Text>
+                                        <View>
+                                        <Text style={{alignSelf: 'flex-end' }}>Monthly</Text>
+                                        </View>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                            <AntDesign name="star" size={18} color="#ffcd00" />
+                                            <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
+                                            <Text style={{justifySelf: 'flex-end',fontSize: 15,}}>{'\t'} €55</Text>
+                                        </View>
+                                    </TouchableOpacity>
+
+                                    
+                                </View>
+
+                                <View style={Styles.pnbBottomContainer}>
+                                    <TouchableOpacity style={Styles.pnbButton}>
+
+                                        <Image
+                                            style={Styles.pnbImage}
+                                            source={require('../assets/backgroundimage.jpg')}
+                                        ></Image>
+                                        <Text style={{ fontSize: 15 }}>SomeText here...</Text>
+                                        <View>
+                                        <Text style={{alignSelf: 'flex-end' }}>Monthly</Text>
+                                        </View>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                            <AntDesign name="star" size={18} color="#ffcd00" />
+                                            <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
+                                            <Text style={{justifySelf: 'flex-end',fontSize: 15,}}>{'\t'} €55</Text>
+                                        </View>
+                                    </TouchableOpacity>
+
+                                    
+                                </View>
+                            </ScrollView>
+
+                        </View>
                     </ScrollView>
                 </View>
 
@@ -59,65 +220,142 @@ class Panel1 extends Component {
 const Styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'orange',
         justifyContent: 'center',
-        padding: 0, 
-        alignItems: 'center',
-        
-    },
-    upperContainer: {
-        flex: 1,
         flexDirection: 'column',
-        marginLeft: 0,
-        marginRight: 0,
-        backgroundColor: 'yellow',
-        justifyContent: 'center',
-        borderBottomLeftRadius: 15,
-        borderBottomRightRadius: 15,
-        alignItems: 'center',
-
-
     },
-    logoArea: {
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginTop: 20,
-        width: 350,
+    headerContainer: {
+        flex: 1,
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+    },
+    headerTopContainer: {
+        flex: 3,
+        backgroundColor: '#ffcd00',
+        width: '100%',
+        display: 'flex',
         flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
     },
-    logotext: {
+    headerBtn: {
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    headerText: {
         fontSize: 35,
         fontWeight: 'bold',
-        marginLeft: 50,
-        marginRight: 20,
     },
-    searchBar: {
-        backgroundColor: 'yellow',
+    headerIconContainer: {
+        display: 'flex',
+        flexDirection: 'row'
     },
-    search: {
-        width: 200,
-        marginTop: 15,
-        marginBottom: 15,
+    headerSearchContainer: {
+        flex: 2,
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#ffcd00'
     },
-    temp: {
-        backgroundColor: 'yellow',
+    headerSearchBar: {
+        // color: '#91d7c5'
     },
-    middleContainer: {
-        flex: 5,
-        //backgroundColor: 'white',
+    headerCurveContainer: {
+        flex: 1,
+        width: '100%',
+        backgroundColor: '#ffcd00',
+        borderBottomLeftRadius: 15,
+        borderBottomRightRadius: 15,
     },
-    scrollView: {
+    mainSectionContainer: {
+        flex: 5
+    },
+    mainSection: {
+        height: '100%',
+        display: 'flex',
+        width: '100%',
+        overflowY: 'scroll'
+    },
+    sportsContainer: {
+        width: '100%',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        marginTop: 10
+    },
+    sportsRow: {
+        flex: 2,
+        flexDirection: 'row',
+        justifyContent: 'center',
+        width: '100%'
+    },
+    sportItem: {
+        height: 90,
+        width: '25%',
+        marginLeft: 2,
+        marginRight: 2,
+        marginTop: 3,
+        marginBottom: 3,
+        backgroundColor: 'lightgrey',
+        borderRadius: 3,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    otherSportsBtn: {
+        width: '85%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderWidth: 1,
+        borderColor: 'lightgrey',
+        borderRadius: 2,
+        paddingTop: 5,
+        paddingBottom: 5,
+    },
+    otherSportsBtnText: {
+        fontSize: 18
+    },
+    scrollHorizontal: {
+        marginTop: 10,
+    },
+    svhButton: {
+        backgroundColor: '#FFCD00',
+        height: 50,
+        width: 100,
+        alignItems: 'center',
+        borderRadius: 5,
+        marginLeft: 15,
+        marginRight: 'auto',
+        justifyContent: 'center',
+    },
+    svhbuttonText: {
+        fontSize: 18,
+    },
+    pnbContainer: {
+        marginTop: 10,
+        marginLeft: 2,
+    },
+    pnbBottomContainer: {
+        backgroundColor: '#EDEDED',
+        marginLeft: 5,
+        marginTop: 5,
+        marginRight: 8
 
     },
-    btn: {
-        width: 10,
-        backgroundColor: 'red',
+    pnbButton: {
+        width: 150,
+        //height: 100,
+        //borderRadius: 5,
     },
-    btnText: {
-        fontSize: 30,
+    pnbImage: {
+        borderRadius: 5,
+        width: 150,
+        height: 100,
     },
 })
 
 
 
 export default Panel1
+
