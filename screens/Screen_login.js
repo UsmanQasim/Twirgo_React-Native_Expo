@@ -36,7 +36,7 @@ class Screen_login extends Component {
                         {/*<Text* style={Styles.greetText}>Twirgo</Text*/}
                         <Image
                             style={Styles.image_Logo}
-                            source={require('../assets/01/01-Images/TWIRGO LOGO Black.png')}
+                            source={require('../assets/01/01-Images/twirgo_logo_black.png')}
                         ></Image>
                     </View>
                     {/* Middle continer with Inputs*/}

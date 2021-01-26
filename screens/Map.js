@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
+// import MapView, {PROVIDER_GOOGLE} from 'react-native-maps';
 
 class Map extends Component {
     render() {

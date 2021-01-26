@@ -7,7 +7,7 @@ export default class test extends Component {
             <View>
                 <Image
                     style={{width: 40, height: 50}}
-                    source={require('../assets/01/01-Images/TWIRGO LOGO ICON.png')}
+                    source={require('../assets/01/01-Images/twirgo_logo_black.png')}
                 ></Image>
             </View>
         )
