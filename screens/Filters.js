@@ -2,12 +2,27 @@ import React, { Component } from 'react';
 import { Searchbar } from 'react-native-paper';
 import { SafeAreaView, View, Text, ImageBackground, Image, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, EvilIcons, Octicons, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 export class Filters extends Component {
     static navigationOptions = {
         header: false
     }
+    state = {
+        backgroundColor: 'white',
+        backgroundColor2: 'black',
+        pressed: false,
+    };
+
+    changeColor() {
+        if (!this.state.pressed) {
+            this.setState({ pressed: true, backgroundColor: '#10C578', backgroundColor2: 'white' });
+        } else {
+            this.setState({ pressed: false, backgroundColor: 'white', backgroundColor2: '#10C578' });
+        }
+    }
+
     render() {
         return (
 
@@ -46,7 +61,7 @@ export class Filters extends Component {
                 <View style={Styles.mainSectionContainer}>
                     <ScrollView style={Styles.mainSection}>
                         <View style={Styles.scrollLabelContainer}>
-
+                            <Text style={Styles.SLClabels}>Budget</Text>
                         </View>
                         {/* Horizontal ScrollView */}
                         <View style={Styles.scrollHorizontal}>
@@ -73,9 +88,147 @@ export class Filters extends Component {
                                 {/**ADD MORE BUTTON Here */}
 
                             </ScrollView>
-
                         </View>
+
+                        <View style={Styles.scrollLabelContainer}>
+                            <Text style={Styles.SLClabels}>Sport</Text>
+                        </View>
+                        {/* Horizontal ScrollView */}
+                        <View style={Styles.scrollHorizontal}>
+                            <ScrollView
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                            >
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Boxing</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Karate</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Dance</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Sports</Text>
+                                </TouchableOpacity>
+
+                                {/**ADD MORE BUTTON Here */}
+
+                            </ScrollView>
+                        </View>
+
+                        <View style={Styles.scrollLabelContainer}>
+                            <Text style={Styles.SLClabels}>Activities</Text>
+                        </View>
+                        {/* Horizontal ScrollView */}
+                        <View style={Styles.scrollHorizontal}>
+                            <ScrollView
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                            >
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Boxing</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Karate</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Dance</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Sports</Text>
+                                </TouchableOpacity>
+
+                                {/**ADD MORE BUTTON Here */}
+
+                            </ScrollView>
+                        </View>
+
+                        <View style={Styles.scrollLabelContainer}>
+                            <Text style={Styles.SLClabels}>Distance</Text>
+                        </View>
+                        {/* Horizontal ScrollView */}
+                        <View style={Styles.scrollHorizontal}>
+                            <ScrollView
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                            >
+                                <TouchableOpacity
+                                    style={{
+                                        backgroundColor: this.state.backgroundColor, height: 45,
+                                        width: 100,
+                                        alignItems: 'center',
+                                        borderRadius: 5,
+                                        marginLeft: 12.5,
+                                        marginRight: 12.5,
+                                        justifyContent: 'center',
+                                    }}
+                                    onPress={() => this.changeColor()}
+                                >
+                                    <Text style={Styles.svhbuttonText}>Boxing</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Karate</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Dance</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Sports</Text>
+                                </TouchableOpacity>
+
+                                {/**ADD MORE BUTTON Here */}
+
+                            </ScrollView>
+                        </View>
+
+                        <View style={Styles.scrollLabelContainer}>
+                            <Text style={Styles.SLClabels}>Distance</Text>
+                        </View>
+                        {/* Horizontal ScrollView */}
+                        <View style={Styles.scrollHorizontal}>
+                            <ScrollView
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                            >
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Outdoor</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Indoor</Text>
+                                </TouchableOpacity>
+
+                                {/**ADD MORE BUTTON Here */}
+
+                            </ScrollView>
+                        </View>
+
+
+
                     </ScrollView>
+                </View>
+
+                <View style={Styles.btnLast}>
+                    <LinearGradient
+                        style={{
+                            borderRadius: 5,
+                        }}
+                        colors={['#10C578', '#10C578', '#10965B']} start={{ x: 0, y: 1 }}
+                        end={{ x: 1, y: 1 }}>
+                        <TouchableOpacity style={Styles.applyBtn}>
+                            <Text style={Styles.applyBtnText}>Apply Filter</Text>
+                        </TouchableOpacity>
+                    </LinearGradient>
                 </View>
 
             </SafeAreaView>
@@ -147,53 +300,21 @@ const Styles = StyleSheet.create({
     scrollLabelContainer: {
         height: 50,
         width: '100%',
-        backgroundColor: 'black'
-    },
-    sportsContainer: {
-        width: '100%',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        marginTop: 10
-    },
-    sportsRow: {
-        flex: 2,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        width: '100%'
-    },
-    sportItem: {
-        height: 90,
-        width: '25%',
-        marginLeft: 2,
-        marginRight: 2,
-        marginTop: 3,
-        marginBottom: 3,
-        backgroundColor: 'lightgrey',
-        borderRadius: 3,
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-    otherSportsBtn: {
-        width: '85%',
-        marginLeft: 'auto',
-        marginRight: 'auto',
         marginTop: 5,
         justifyContent: 'center',
-        alignItems: 'center',
-        borderWidth: 1,
-        borderColor: 'lightgrey',
-        borderRadius: 2,
-        paddingTop: 5,
-        paddingBottom: 5,
     },
-    otherSportsBtnText: {
-        fontSize: 18
+    SLClabels: {
+        color: 'black',
+        marginLeft: 10,
+        fontSize: 18,
     },
+
     scrollHorizontal: {
-        marginTop: 10,
+        marginTop: 5,
     },
     svhButton: {
         backgroundColor: '#FFCD00',
+
         height: 45,
         width: 100,
         alignItems: 'center',
@@ -202,29 +323,28 @@ const Styles = StyleSheet.create({
         marginRight: 12.5,
         justifyContent: 'center',
     },
+
+    // svhButton:{
+
+    // },
     svhbuttonText: {
         fontSize: 18,
     },
-    pnbContainer: {
-        marginTop: 10,
-        marginLeft: 2,
+    btnLast: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
-    pnbBottomContainer: {
-        backgroundColor: '#EDEDED',
-        marginLeft: 5,
-        marginTop: 5,
-        marginRight: 8
-
+    applyBtn: {
+        width: 220,
+        height: 35,
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 10,
     },
-    pnbButton: {
-        width: 150,
-        //height: 100,
-        //borderRadius: 5,
-    },
-    pnbImage: {
-        borderRadius: 5,
-        width: 150,
-        height: 100,
+    applyBtnText: {
+        color: 'white',
+        fontSize: 18,
     },
 })
 
