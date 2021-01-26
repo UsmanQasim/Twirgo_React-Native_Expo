@@ -45,7 +45,36 @@ export class Filters extends Component {
                 }
                 <View style={Styles.mainSectionContainer}>
                     <ScrollView style={Styles.mainSection}>
-                        
+                        <View style={Styles.scrollLabelContainer}>
+
+                        </View>
+                        {/* Horizontal ScrollView */}
+                        <View style={Styles.scrollHorizontal}>
+                            <ScrollView
+                                horizontal={true}
+                                showsHorizontalScrollIndicator={false}
+                            >
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Boxing</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Karate</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Dance</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Sports</Text>
+                                </TouchableOpacity>
+
+                                {/**ADD MORE BUTTON Here */}
+
+                            </ScrollView>
+
+                        </View>
                     </ScrollView>
                 </View>
 
@@ -114,6 +143,11 @@ const Styles = StyleSheet.create({
         display: 'flex',
         width: '100%',
         overflow: 'scroll'
+    },
+    scrollLabelContainer: {
+        height: 50,
+        width: '100%',
+        backgroundColor: 'black'
     },
     sportsContainer: {
         width: '100%',
