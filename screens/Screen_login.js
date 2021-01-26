@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { SafeAreaView, View, Text, ImageBackground, TouchableOpacity, Linking, StyleSheet, TextInput, Alert } from 'react-native';
+import { SafeAreaView, View, Text, ImageBackground, Image, TouchableOpacity, Linking, StyleSheet, TextInput, Alert } from 'react-native';
 import { SocialIcon } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
 
-const image = { uri: "https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHw%3D&w=1000&q=80" };
+//const image = { uri: "https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHw%3D&w=1000&q=80" };
 
 class Screen_login extends Component {
     state = {
@@ -29,11 +29,15 @@ class Screen_login extends Component {
     render() {
         return (
             // Background image 
-            <ImageBackground source={image} style={Styles.image}>
+            <ImageBackground style={Styles.image}>
                 <SafeAreaView style={Styles.container}>
                     {/* Top continer with logo*/}
                     <View style={Styles.topContainer}>
-                        <Text style={Styles.greetText}>Twirgo</Text>
+                        {/*<Text* style={Styles.greetText}>Twirgo</Text*/}
+                        <Image
+                            style={Styles.image_Logo}
+                            source={require('../assets/01/01-Images/TWIRGO LOGO Black.png')}
+                        ></Image>
                     </View>
                     {/* Middle continer with Inputs*/}
                     <View style={Styles.middleContainer}>
@@ -114,8 +118,16 @@ const Styles = StyleSheet.create({
     },
     image: {
         flex: 1,
+        backgroundColor: '#eed400',
         width: null,
         height: null
+    },
+    image_Logo: {
+        //flex: 1,
+        //backgroundColor: 'red',
+        resizeMode: 'contain',
+        width: 300,
+        height: 110,
     },
     topContainer: {
         flex: 2,

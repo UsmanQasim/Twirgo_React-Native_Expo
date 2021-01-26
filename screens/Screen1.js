@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SafeAreaView, View, Text, ImageBackground, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
+import { SafeAreaView, View, Text, ImageBackground, TouchableOpacity, StyleSheet, Image, TextInput, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 class Screen1 extends Component {
@@ -23,10 +23,14 @@ class Screen1 extends Component {
     };
     render() {
         return (
-            <ImageBackground source={require('../assets/backgroundimage.jpg')} style={Styles.image}>
+            <ImageBackground style={Styles.image}>
                 <SafeAreaView style={Styles.container}>
                     <View style={Styles.topContainer}>
-                        <Text style={Styles.greetText}>Twirgo</Text>
+                        {/*<Text style={Styles.greetText}>Twirgo</Text>*/}
+                        <Image
+                            style={Styles.image_Logo}
+                            source={require('../assets/01/01-Images/TWIRGO LOGO Black.png')}
+                        ></Image>
                     </View>
                     <View style={Styles.middleContainer}>
                         <Text style={Styles.normalText}>USERNAME</Text>
@@ -84,8 +88,16 @@ const Styles = StyleSheet.create({
     },
     image: {
         flex: 1,
+        backgroundColor: '#eed400',
         width: null,
         height: null
+    },
+    image_Logo: {
+        //flex: 1,
+        //backgroundColor: 'red',
+        resizeMode: 'contain',
+        width: 300,
+        height: 110,
     },
     topContainer: {
         flex: 2,

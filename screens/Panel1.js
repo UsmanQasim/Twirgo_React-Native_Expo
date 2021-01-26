@@ -125,87 +125,76 @@ class Panel1 extends Component {
                             >
                                 <View style={Styles.pnbBottomContainer}>
                                     <TouchableOpacity style={Styles.pnbButton}>
-
                                         <Image
                                             style={Styles.pnbImage}
                                             source={require('../assets/backgroundimage.jpg')}
                                         ></Image>
                                         <Text style={{ fontSize: 15 }}>SomeText here...</Text>
                                         <View>
-                                        <Text style={{alignSelf: 'flex-end' }}>Monthly</Text>
+                                            <Text style={{ alignSelf: 'flex-end' }}>Monthly</Text>
                                         </View>
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <AntDesign name="star" size={18} color="#ffcd00" />
                                             <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
-                                            <Text style={{justifySelf: 'flex-end',fontSize: 15,}}>{'\t'} €55</Text>
+                                            <Text style={{ justifySelf: 'flex-end', fontSize: 15, }}>{'\t'} €55</Text>
                                         </View>
                                     </TouchableOpacity>
-
-
                                 </View>
 
                                 <View style={Styles.pnbBottomContainer}>
                                     <TouchableOpacity style={Styles.pnbButton}>
-
                                         <Image
                                             style={Styles.pnbImage}
                                             source={require('../assets/backgroundimage.jpg')}
                                         ></Image>
                                         <Text style={{ fontSize: 15 }}>SomeText here...</Text>
                                         <View>
-                                        <Text style={{alignSelf: 'flex-end' }}>Monthly</Text>
+                                            <Text style={{ alignSelf: 'flex-end' }}>Monthly</Text>
                                         </View>
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <AntDesign name="star" size={18} color="#ffcd00" />
                                             <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
-                                            <Text style={{justifySelf: 'flex-end',fontSize: 15,}}>{'\t'} €55</Text>
+                                            <Text style={{ justifySelf: 'flex-end', fontSize: 15, }}>{'\t'} €55</Text>
                                         </View>
                                     </TouchableOpacity>
-
-                                    
                                 </View>
 
                                 <View style={Styles.pnbBottomContainer}>
                                     <TouchableOpacity style={Styles.pnbButton}>
-
                                         <Image
                                             style={Styles.pnbImage}
                                             source={require('../assets/backgroundimage.jpg')}
                                         ></Image>
                                         <Text style={{ fontSize: 15 }}>SomeText here...</Text>
                                         <View>
-                                        <Text style={{alignSelf: 'flex-end' }}>Monthly</Text>
+                                            <Text style={{ alignSelf: 'flex-end' }}>Monthly</Text>
                                         </View>
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <AntDesign name="star" size={18} color="#ffcd00" />
                                             <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
-                                            <Text style={{justifySelf: 'flex-end',fontSize: 15,}}>{'\t'} €55</Text>
+                                            <Text style={{ justifySelf: 'flex-end', fontSize: 15, }}>{'\t'} €55</Text>
                                         </View>
                                     </TouchableOpacity>
-
-                                    
                                 </View>
 
                                 <View style={Styles.pnbBottomContainer}>
                                     <TouchableOpacity style={Styles.pnbButton}>
-
                                         <Image
                                             style={Styles.pnbImage}
                                             source={require('../assets/backgroundimage.jpg')}
                                         ></Image>
                                         <Text style={{ fontSize: 15 }}>SomeText here...</Text>
                                         <View>
-                                        <Text style={{alignSelf: 'flex-end' }}>Monthly</Text>
+                                            <Text style={{ alignSelf: 'flex-end' }}>Monthly</Text>
                                         </View>
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <AntDesign name="star" size={18} color="#ffcd00" />
                                             <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
-                                            <Text style={{justifySelf: 'flex-end',fontSize: 15,}}>{'\t'} €55</Text>
+                                            <Text style={{ justifySelf: 'flex-end', fontSize: 15, }}>{'\t'} €55</Text>
                                         </View>
                                     </TouchableOpacity>
-
-                                    
                                 </View>
+                                {/**ADD MORE BUTTON Here */}
                             </ScrollView>
 
                         </View>
@@ -224,7 +213,7 @@ const Styles = StyleSheet.create({
         flexDirection: 'column',
     },
     headerContainer: {
-        flex: 3/2,
+        flex: 3 / 2,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -252,7 +241,7 @@ const Styles = StyleSheet.create({
         flexDirection: 'row'
     },
     headerSearchContainer: {
-        flex: 3/2,
+        flex: 3 / 2,
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',

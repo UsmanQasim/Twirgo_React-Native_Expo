@@ -5,6 +5,7 @@ import Screen1 from '../screens/Screen1';
 import Panel1 from '../screens/Panel1';
 import Screen_login from '../screens/Screen_login';
 import Map from '../screens/Map';
+import Test from '../screens/test';
 //import FeedbackScreen from '../screens/FeedbackScreen';
 
 const Navigator = createStackNavigator({
@@ -23,7 +24,10 @@ const Navigator = createStackNavigator({
     },
     Map: {
         screen: Map
-    }
+    },
+    Test: {
+        screen: Test
+    },
     //
     // FeedbackScreen: {
     //     screen: FeedbackScreen
@@ -31,7 +35,9 @@ const Navigator = createStackNavigator({
 }, {
     //initialRouteName: 'SignIn'
     //initialRouteName: 'SignUp'
-    initialRouteName: 'Panel1'
+    //initialRouteName: 'Panel1'
+    //initialRouteName: 'Test'
+    initialRouteName: 'Map'
 });
 
 const StackNavigator = createAppContainer(Navigator);
