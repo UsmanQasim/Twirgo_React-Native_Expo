@@ -1,17 +1,46 @@
-import React, { Component } from 'react'
-import { View, Image } from 'react-native'
-
+import React, { Component } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View
+} from 'react-native';
+import CalendarPicker from 'react-native-calendar-picker';
 export default class test extends Component {
-    render() {
-        return (
-            <View>
-                <Image
-                    style={{width: 40, height: 50}}
-                    source={require('../assets/01/01-Images/twirgo_logo_black.png')}
-                ></Image>
-            </View>
-        )
+    constructor(props) {
+      super(props);
+      this.state = {
+        selectedStartDate: null,
+      };
+      this.onDateChange = this.onDateChange.bind(this);
     }
-}
 
+    static navigationOptions = {
+        header: false
+    }
+  
+    onDateChange(date) {
+      this.setState({
+        selectedStartDate: date,
+      });
+    }
+
+    render() {
+      const { selectedStartDate } = this.state;
+      const startDate = selectedStartDate ? selectedStartDate.toString() : '';
+      return (
+        <View style={styles.container}>
+          <CalendarPicker
+            onDateChange={this.onDateChange}
+          />
+        </View>
+      );
+    }
+  }
+  
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#FFFFFF',
+    },
+  });
 
