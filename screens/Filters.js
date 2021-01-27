@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import { Searchbar } from 'react-native-paper';
-import { SafeAreaView, View, Text, ImageBackground, Image, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
+import { SafeAreaView, TouchableHighlight, View, Text, ImageBackground, Image, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, EvilIcons, Octicons, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 export class Filters extends Component {
+
     static navigationOptions = {
         header: false
     }
     state = {
         backgroundColor: 'white',
-        backgroundColor2: 'black',
         pressed: false,
     };
 
     changeColor() {
         if (!this.state.pressed) {
-            this.setState({ pressed: true, backgroundColor: '#10C578', backgroundColor2: 'white' });
+            this.setState({ backgroundColor: 'white', pressed: true });
         } else {
-            this.setState({ pressed: false, backgroundColor: 'white', backgroundColor2: '#10C578' });
+            this.setState({ backgroundColor: '#10C578', pressed: false });
         }
     }
 
@@ -33,16 +33,13 @@ export class Filters extends Component {
                 <View style={Styles.headerContainer}>
                     <View style={Styles.headerTopContainer}>
                         <TouchableOpacity style={Styles.headerBtn}>
-                            <Octicons name="three-bars" size={40} color="white" />
+                            <Ionicons name="chevron-back" size={40} color="#10C578" style={{alignSelf: 'flex-end' }} />
                         </TouchableOpacity>
-                        <Text style={Styles.headerText}>Twirgo</Text>
+                        <Text style={Styles.headerText}>Filters</Text>
                         <View style={Styles.headerIconContainer}>
-                            <TouchableOpacity style={Styles.headerBtn}>
-                                <AntDesign name="message1" size={30} color="white" />
-                            </TouchableOpacity>
-                            <TouchableOpacity style={Styles.headerBtn}>
-                                <EvilIcons name="bell" size={42} color="white" />
-                            </TouchableOpacity>
+                            <Text
+                                style={{ fontSize: 30, alignSelf: 'flex-end' }}
+                            >Reset</Text>
                         </View>
                     </View>
                     <View style={Styles.headerSearchContainer}>
@@ -69,19 +66,60 @@ export class Filters extends Component {
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
                             >
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor,
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Boxing</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Karate</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Dance</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Sports</Text>
                                 </TouchableOpacity>
 
@@ -99,19 +137,59 @@ export class Filters extends Component {
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
                             >
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Boxing</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Karate</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Dance</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Sports</Text>
                                 </TouchableOpacity>
 
@@ -129,19 +207,59 @@ export class Filters extends Component {
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
                             >
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Boxing</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Karate</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Dance</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Sports</Text>
                                 </TouchableOpacity>
 
@@ -164,6 +282,8 @@ export class Filters extends Component {
                                         backgroundColor: this.state.backgroundColor, height: 45,
                                         width: 100,
                                         alignItems: 'center',
+                                        borderColor: '#10C578',
+                                        borderWidth: 2,
                                         borderRadius: 5,
                                         marginLeft: 12.5,
                                         marginRight: 12.5,
@@ -171,18 +291,50 @@ export class Filters extends Component {
                                     }}
                                     onPress={() => this.changeColor()}
                                 >
-                                    <Text style={Styles.svhbuttonText}>Boxing</Text>
+                                    <Text style={Styles.svhbuttonText}>test</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}
+                                    onPress={() => this.changeColor()}
+                                >
                                     <Text style={Styles.svhbuttonText}>Karate</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Dance</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Sports</Text>
                                 </TouchableOpacity>
 
@@ -200,11 +352,31 @@ export class Filters extends Component {
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
                             >
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Outdoor</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={Styles.svhButton}>
+                                <TouchableOpacity style={{
+                                    backgroundColor: this.state.backgroundColor, height: 45,
+                                    width: 100,
+                                    alignItems: 'center',
+                                    borderColor: '#10C578',
+                                    borderWidth: 2,
+                                    borderRadius: 5,
+                                    marginLeft: 12.5,
+                                    marginRight: 12.5,
+                                    justifyContent: 'center',
+                                }}>
                                     <Text style={Styles.svhbuttonText}>Indoor</Text>
                                 </TouchableOpacity>
 
@@ -255,23 +427,24 @@ const Styles = StyleSheet.create({
         width: '100%',
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
         alignItems: 'center',
     },
     headerBtn: {
         justifyContent: 'center',
+        width: '10%',
+        margin: 20,
         alignItems: 'center'
     },
     headerText: {
-        fontSize: 35,
-        fontWeight: 'bold',
+        fontSize: 30,
     },
     headerIconContainer: {
-        display: 'flex',
-        flexDirection: 'row'
+        alignItems: 'center',
+        width: '70%',
+        backgroundColor: 'white'
     },
     headerSearchContainer: {
-        flex: 3 / 2,
+        flex: 3,
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
@@ -279,7 +452,7 @@ const Styles = StyleSheet.create({
     },
     headerSearchBar: {
         width: '80%',
-        height: 40
+        height: 60
     },
     headerCurveContainer: {
         flex: 1,
