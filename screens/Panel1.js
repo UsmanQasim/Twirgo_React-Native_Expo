@@ -108,6 +108,22 @@ class Panel1 extends Component {
                                     <Text style={Styles.svhbuttonText}>Sports</Text>
                                 </TouchableOpacity>
 
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Sports</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Sports</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Sports</Text>
+                                </TouchableOpacity>
+
+                                <TouchableOpacity style={Styles.svhButton}>
+                                    <Text style={Styles.svhbuttonText}>Sports</Text>
+                                </TouchableOpacity>
+
                                 {/**ADD MORE BUTTON Here */}
 
                             </ScrollView>

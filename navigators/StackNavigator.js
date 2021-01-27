@@ -5,11 +5,12 @@ import Screen1 from '../screens/Screen1';
 import Panel1 from '../screens/Panel1';
 import Screen_login from '../screens/Screen_login';
 import Map from '../screens/Map';
-//import Test from '../screens/test';
+import Test from '../screens/test';
 import Filters from '../screens/Filters';
 import BookingScreen from '../screens/BookingScreen';
 import { SliderBase } from 'react-native';
-//import FeedbackScreen from '../screens/FeedbackScreen';
+import MainScreen from '../screens/MainScreen';
+//import Feedback Screen from '../screens/FeedbackScreen';
 
 const Navigator = createStackNavigator({
     SignUp: {
@@ -24,11 +25,14 @@ const Navigator = createStackNavigator({
     Map: {
         screen: Map
     },
-    // Test: {
-    //     screen: sabs    
-    // },
+    Test: {
+        screen: Test    
+    },
     Filters: {
         screen: Filters
+    },
+    MainS: {
+        screen: MainScreen
     },
     BookingScreen: {
         screen: BookingScreen
@@ -40,10 +44,12 @@ const Navigator = createStackNavigator({
 }, {
     //initialRouteName: 'SignUp'
     //initialRouteName: 'SignIn',
-    //initialRouteName: 'Test',
+    initialRouteName: 'Test',
+    
+    //initialRouteName: 'MainS',
     //initialRouteName: 'Panel1',
     //initialRouteName: 'Map',
-    initialRouteName: 'Filters',
+    //initialRouteName: 'Filters',
     //initialRouteName: 'BookingScreen'
 });
 
