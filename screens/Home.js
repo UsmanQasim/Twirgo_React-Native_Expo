@@ -115,8 +115,8 @@ class Home extends Component {
                         </View>
 
                         <View style={Styles.pnbContainer}>
-                            <View style={{ flexDirection: 'row' }}>
-                                <Text style={{ fontSize: 18 }}>Places near by</Text>
+                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5 }}>
+                                <Text style={{ fontSize: 18, width: '100%' }}>Places near by</Text>
                                 <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="black" />
                             </View>
                             <ScrollView
@@ -195,6 +195,43 @@ class Home extends Component {
                                     </TouchableOpacity>
                                 </View>
                             </ScrollView>
+                        </View>
+
+                        <View style={Styles.featuresContainer}>
+                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5 }}>
+                                <Text style={{ fontSize: 18, marginTop: 2, }}>Featured</Text>
+                                <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="black" />
+                            </View>
+                            <View style={Styles.featuresContainerBottom}>
+                                <TouchableOpacity style={Styles.featButton}>
+                                    <View style={Styles.imgfeatures}>
+                                        <Image
+                                            style={Styles.pnbImage}
+                                            source={require('../assets/backgroundimage.jpg')}
+                                        ></Image>
+                                    </View>
+                                    <View style={{}}>
+
+                                        <View style={{ }}>
+                                            <Text style={{ fontSize: 18, }}>Tennis Milano City..</Text>
+                                            <TouchableOpacity
+                                                style={{ }}
+                                            >
+                                                <Ionicons
+                                                    style={{ backgroundColor: 'pink' }}
+                                                    name="ios-heart-outline" size={24} color="green" />
+                                            </TouchableOpacity>
+                                        </View>
+
+                                        <View style={Styles.featText1}>
+                                            <Text style={{ fontSize: 18, }}> 5.0 Very good</Text>
+                                            <Text style={{ fontSize: 15, }}> 650meter from centre</Text>
+                                        </View>
+                                    </View>
+                                </TouchableOpacity>
+                                {/*</View>*/}
+
+                            </View>
                         </View>
                     </ScrollView>
                 </View>
@@ -336,9 +373,45 @@ const Styles = StyleSheet.create({
     },
     pnbImage: {
         borderRadius: 5,
-        width: 150,
+        width: 120,
         height: 100,
     },
+    featuresContainer: {
+        //width: '100%',
+    },
+    featuresContainerBottom: {
+       // width: '99%',
+        marginLeft: 5,
+        //marginRight: 10,
+        //justifyContent: 'space-between',
+       // borderWidth: 5
+    },
+    featuresIneerContainer: {
+        //flexDirection: 'row',
+    },
+    featButton: {
+        flexDirection: 'row',
+        backgroundColor: 'gray',
+        //width: '100%',
+        marginBottom: 5,
+        marginTop: 5,
+    },
+    featText: {
+        marginLeft: 4,
+        marginTop: 2,
+        //flex: 1,
+        flexDirection: 'row',
+        backgroundColor: 'red',
+        //width: '100%'
+    },
+    // featText1: {
+    //     marginLeft: 4,
+    //     marginTop: 2,
+    //     flex: 1,
+    //     //flexDirection: 'row',
+    //     // backgroundColor: 'red',
+    //     width: '100%'
+    // },
 })
 
 

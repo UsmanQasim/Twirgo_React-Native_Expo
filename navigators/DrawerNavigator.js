@@ -4,7 +4,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import DrawerComponent from '../components/DrawerComponent';
 
-import { HomeStackNavigator, ProfileStackNavigator } from "./StackNavigator";
+import { HomeStackNavigator, ProfileStackNavigator , ExploreStackNavigator} from "./StackNavigator";
 
 const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
@@ -18,8 +18,11 @@ const DrawerNavigator = () => {
             overlayColor='rgba(0, 0, 0, 0.5)'
             drawerStyle={{ backgroundColor: 'transparent' }}
         >
-            <Drawer.Screen name="Home" component={HomeStackNavigator} />
+        <Drawer.Screen name="Explore" component={ExploreStackNavigator} />
+        <Drawer.Screen name="Home" component={HomeStackNavigator} />
             <Drawer.Screen name="Profile" component={ProfileStackNavigator} />
+            
+
         </Drawer.Navigator >
     );
 }

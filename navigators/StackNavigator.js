@@ -6,7 +6,7 @@ import Filters from '../screens/Filters';
 import BookingScreen from '../screens/BookingScreen';
 
 import Profile from '../screens/Profile';
-
+import Explore from '../screens/Explore';
 const Stack = createStackNavigator();
 const HomeStackNavigator = () => {
     return (
@@ -25,4 +25,12 @@ const ProfileStackNavigator = () => {
     )
 }
 
-export { HomeStackNavigator, ProfileStackNavigator };
+const ExploreStackNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Explore">
+            <Stack.Screen name="Explore" component={Explore} />
+        </Stack.Navigator>
+    )
+}
+
+export { HomeStackNavigator, ProfileStackNavigator, ExploreStackNavigator };
