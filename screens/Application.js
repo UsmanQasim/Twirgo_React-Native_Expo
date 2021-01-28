@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
-import StackNavigator from '../navigators/StackNavigator';
+
+import { NavigationContainer } from "@react-navigation/native";
+import DrawerNavigator from "../navigators/DrawerNavigator";
 
 export class HomeScreen extends Component {
     render() {
-        return <StackNavigator />
+        return (
+            <NavigationContainer>
+                <DrawerNavigator />
+            </NavigationContainer>
+        );
     }
 }
 

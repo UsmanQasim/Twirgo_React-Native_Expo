@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { SafeAreaView, View, Text, ImageBackground, TouchableOpacity, StyleSheet, Image, TextInput, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-class Screen1 extends Component {
+class Register extends Component {
     state = {
         password: '',
         conPassword: '',
@@ -149,4 +149,4 @@ const Styles = StyleSheet.create({
     },
 });
 
-export default Screen1;
+export default Register;

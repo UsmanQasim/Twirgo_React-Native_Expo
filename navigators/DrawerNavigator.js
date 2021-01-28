@@ -1,17 +1,26 @@
-import * as React from 'react';
-import { createDrawerNavigator, } from '@react-navigation/drawer'; 
+import React from "react";
 
-import MainScreen from '../screens/MainScreen';
-import AnotherScreen from '../screens/AnotherScreen';
+import { createDrawerNavigator } from "@react-navigation/drawer";
+
+import DrawerComponent from '../components/DrawerComponent';
+
+import { HomeStackNavigator, ProfileStackNavigator } from "./StackNavigator";
 
 const Drawer = createDrawerNavigator();
-
-function DrawerNavigator() {
+const DrawerNavigator = () => {
     return (
-        <Drawer.Navigator>
-            <Drawer.Screen name="Main Screen" component={MainScreen} />
-            <Drawer.Screen name="Some Other Screen" component={AnotherScreen} />
-        </Drawer.Navigator>
+        <Drawer.Navigator
+            drawerContentOptions={{
+                activeTintColor: '#27ab67',
+                itemStyle: { marginVertical: 1, marginHorizontal: 5 },
+            }}
+            drawerContent={(props) => <DrawerComponent {...props} />}
+            overlayColor='rgba(0, 0, 0, 0.5)'
+            drawerStyle={{ backgroundColor: 'transparent' }}
+        >
+            <Drawer.Screen name="Home" component={HomeStackNavigator} />
+            <Drawer.Screen name="Profile" component={ProfileStackNavigator} />
+        </Drawer.Navigator >
     );
 }
 

@@ -30,9 +30,6 @@ export class BookingScreen extends Component {
         return (
 
             <SafeAreaView style={Styles.container}>
-                {
-                    // HEADER HERE 
-                }
                 <View style={Styles.headerContainer}>
                     <View style={Styles.headerTopContainer}>
                         <TouchableOpacity style={Styles.headerBtn}>
@@ -57,10 +54,6 @@ export class BookingScreen extends Component {
                     </View>
                     <View style={Styles.headerCurveContainer}></View>
                 </View>
-
-                {
-                    // CONTENT HERE
-                }
                 <View style={Styles.mainSectionContainer}>
                     <ScrollView style={Styles.mainSection}>
                         <View style={Styles.scrollLabelContainer}>
@@ -213,8 +206,6 @@ const Styles = StyleSheet.create({
     },
     pnbButton: {
         width: 150,
-        //height: 100,
-        //borderRadius: 5,
     },
     pnbImage: {
         borderRadius: 5,

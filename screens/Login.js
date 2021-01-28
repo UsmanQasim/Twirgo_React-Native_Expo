@@ -3,11 +3,7 @@ import { SafeAreaView, View, Text, ImageBackground, Image, TouchableOpacity, Lin
 import { SocialIcon } from 'react-native-elements';
 import { LinearGradient } from 'expo-linear-gradient';
 
-
-
-//const image = { uri: "https://images.unsplash.com/flagged/photo-1593005510329-8a4035a7238f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHw%3D&w=1000&q=80" };
-
-class Screen_login extends Component {
+class Login extends Component {
     state = {
         password: '',
         conPassword: '',
@@ -28,18 +24,14 @@ class Screen_login extends Component {
     };
     render() {
         return (
-            // Background image 
             <ImageBackground style={Styles.image}>
                 <SafeAreaView style={Styles.container}>
-                    {/* Top continer with logo*/}
                     <View style={Styles.topContainer}>
-                        {/*<Text* style={Styles.greetText}>Twirgo</Text*/}
                         <Image
                             style={Styles.image_Logo}
                             source={require('../assets/01/01-Images/twirgo_logo_black.png')}
                         ></Image>
                     </View>
-                    {/* Middle continer with Inputs*/}
                     <View style={Styles.middleContainer}>
                         <Text style={Styles.normalText}>EMAIL</Text>
                         <TextInput
@@ -48,7 +40,8 @@ class Screen_login extends Component {
                             placeholder=' example@example.com'
                             placeholderTextColor="white"
                             style={Styles.inputField}
-                            onChangeText={(text) => this.setState({ email: text })} />
+                            onChangeText={(text) => this.setState({ email: text })}
+                        />
                         <Text style={Styles.passText}>PASSWORD</Text>
                         <TextInput
                             style={Styles.passInput}
@@ -57,39 +50,40 @@ class Screen_login extends Component {
                             secureTextEntry={true}
                             textContentType={'password'}
                             style={Styles.inputField}
-                            onChangeText={(text) => this.setState({ password: text })} />
+                            onChangeText={(text) => this.setState({ password: text })}
+                        />
                     </View>
-                    {/* bottom continer with links*/}
                     <View style={Styles.bottomContainer}>
-                        <LinearGradient colors={['#10C578', '#10C578', '#10965B']} start={{ x: 0, y: 1 }}
-                            end={{ x: 1, y: 1 }}>
+                        <LinearGradient
+                            colors={['#10C578', '#10C578', '#10965B']}
+                            start={{ x: 0, y: 1 }}
+                            end={{ x: 1, y: 1 }}
+                        >
                             <TouchableOpacity
                                 style={Styles.btn}
-                                onPress={() => this.signUp()}>
+                                onPress={() => this.signUp()}
+                            >
                                 <Text style={Styles.btnText}>Sign In</Text>
                             </TouchableOpacity>
                         </LinearGradient>
-                        {/* Forgot section*/}
                         <View>
-                            <Text style={Styles.forgotText}
-                                onPress={() => Linking.openURL('http://google.com')}>
+                            <Text
+                                style={Styles.forgotText}
+                                onPress={() => Linking.openURL('http://google.com')}
+                            >
                                 Forgot your password?
                             </Text>
                         </View>
-
                     </View>
-                    {/*Goto Register section*/}
                     <View style={Styles.registerContiner}>
-                        <Text style={Styles.regText1}>
-                            Don't have an account?
-                            </Text>
+                        <Text style={Styles.regText1}>Don't have an account?</Text>
                         <Text
                             style={Styles.regText2}
-                            onPress={() => Linking.openURL('http://google.com')}>
+                            onPress={() => Linking.openURL('http://google.com')}
+                        >
                             Register
-                            </Text>
+                        </Text>
                     </View>
-                    {/*Social Container */}
                     <View style={Styles.SocialContainer}>
                         <SocialIcon
                             onPress={() => Linking.openURL('http://facebook.com')}
@@ -123,8 +117,6 @@ const Styles = StyleSheet.create({
         height: null
     },
     image_Logo: {
-        //flex: 1,
-        //backgroundColor: 'red',
         resizeMode: 'contain',
         width: 300,
         height: 110,
@@ -201,7 +193,6 @@ const Styles = StyleSheet.create({
         justifyContent: 'center'
     },
     btn: {
-        //backgroundColor: '#2F653E',
         width: 220,
         height: 35,
         justifyContent: 'center',
@@ -219,4 +210,4 @@ const Styles = StyleSheet.create({
     },
 });
 
-export default Screen_login;
+export default Login;

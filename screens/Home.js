@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Searchbar } from 'react-native-paper';
-import { SafeAreaView, View, Text, ImageBackground, Image, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
+import { SafeAreaView, View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { AntDesign, EvilIcons, Octicons, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 
-class Panel1 extends Component {
+class Home extends Component {
     static navigationOptions = {
         header: false
     }
@@ -14,14 +14,10 @@ class Panel1 extends Component {
     };
     render() {
         return (
-
             <SafeAreaView style={Styles.container}>
-                {
-                    // HEADER HERE 
-                }
                 <View style={Styles.headerContainer}>
                     <View style={Styles.headerTopContainer}>
-                        <TouchableOpacity style={Styles.headerBtn}>
+                        <TouchableOpacity style={Styles.headerBtn} onPress={() => this.props.navigation.openDrawer()}>
                             <Octicons name="three-bars" size={40} color="white" />
                         </TouchableOpacity>
                         <Text style={Styles.headerText}>Twirgo</Text>
@@ -43,17 +39,9 @@ class Panel1 extends Component {
                     </View>
                     <View style={Styles.headerCurveContainer}></View>
                 </View>
-
-                {
-                    // CONTENT HERE
-                }
                 <View style={Styles.mainSectionContainer}>
                     <ScrollView style={Styles.mainSection}>
-                        {
-                            // SPORTS CONTAINER
-                        }
                         <View style={Styles.sportsContainer}>
-                            {/* SPORTS ICONS */}
                             <View style={Styles.sportsRow}>
                                 <View style={Styles.sportItem}>
                                     <MaterialCommunityIcons name="weight-lifter" size={50} color="#27ab67" />
@@ -82,7 +70,6 @@ class Panel1 extends Component {
                                     <Text>Golf</Text>
                                 </View>
                             </View>
-                            { /*OTHER SPORTS BUTTON*/}
                             <TouchableOpacity style={Styles.otherSportsBtn}>
                                 <Text style={Styles.otherSportsBtnText}>Other Sports</Text>
                             </TouchableOpacity>
@@ -123,9 +110,6 @@ class Panel1 extends Component {
                                 <TouchableOpacity style={Styles.svhButton}>
                                     <Text style={Styles.svhbuttonText}>Sports</Text>
                                 </TouchableOpacity>
-
-                                {/**ADD MORE BUTTON Here */}
-
                             </ScrollView>
 
                         </View>
@@ -210,13 +194,10 @@ class Panel1 extends Component {
                                         </View>
                                     </TouchableOpacity>
                                 </View>
-                                {/**ADD MORE BUTTON Here */}
                             </ScrollView>
-
                         </View>
                     </ScrollView>
                 </View>
-
             </SafeAreaView>
         )
     }
@@ -352,8 +333,6 @@ const Styles = StyleSheet.create({
     },
     pnbButton: {
         width: 150,
-        //height: 100,
-        //borderRadius: 5,
     },
     pnbImage: {
         borderRadius: 5,
@@ -364,5 +343,5 @@ const Styles = StyleSheet.create({
 
 
 
-export default Panel1
+export default Home
 

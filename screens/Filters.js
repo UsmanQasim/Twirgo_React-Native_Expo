@@ -25,15 +25,11 @@ export class Filters extends Component {
 
     render() {
         return (
-
             <SafeAreaView style={Styles.container}>
-                {
-                    // HEADER HERE 
-                }
                 <View style={Styles.headerContainer}>
                     <View style={Styles.headerTopContainer}>
                         <TouchableOpacity style={Styles.headerBtn}>
-                            <Ionicons name="chevron-back" size={40} color="#10C578" style={{alignSelf: 'flex-end' }} />
+                            <Ionicons name="chevron-back" size={40} color="#10C578" style={{ alignSelf: 'flex-end' }} />
                         </TouchableOpacity>
                         <Text style={Styles.headerText}>Filters</Text>
                         <View style={Styles.headerIconContainer}>
@@ -51,16 +47,11 @@ export class Filters extends Component {
                     </View>
                     <View style={Styles.headerCurveContainer}></View>
                 </View>
-
-                {
-                    // CONTENT HERE
-                }
                 <View style={Styles.mainSectionContainer}>
                     <ScrollView style={Styles.mainSection}>
                         <View style={Styles.scrollLabelContainer}>
                             <Text style={Styles.SLClabels}>Budget</Text>
                         </View>
-                        {/* Horizontal ScrollView */}
                         <View style={Styles.scrollHorizontal}>
                             <ScrollView
                                 horizontal={true}
@@ -80,7 +71,6 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Boxing</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -94,7 +84,6 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Karate</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -108,7 +97,6 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Dance</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -122,16 +110,11 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Sports</Text>
                                 </TouchableOpacity>
-
-                                {/**ADD MORE BUTTON Here */}
-
                             </ScrollView>
                         </View>
-
                         <View style={Styles.scrollLabelContainer}>
                             <Text style={Styles.SLClabels}>Sport</Text>
                         </View>
-                        {/* Horizontal ScrollView */}
                         <View style={Styles.scrollHorizontal}>
                             <ScrollView
                                 horizontal={true}
@@ -150,7 +133,6 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Boxing</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -164,7 +146,6 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Karate</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -178,7 +159,6 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Dance</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -192,16 +172,12 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Sports</Text>
                                 </TouchableOpacity>
-
-                                {/**ADD MORE BUTTON Here */}
-
                             </ScrollView>
                         </View>
 
                         <View style={Styles.scrollLabelContainer}>
                             <Text style={Styles.SLClabels}>Activities</Text>
                         </View>
-                        {/* Horizontal ScrollView */}
                         <View style={Styles.scrollHorizontal}>
                             <ScrollView
                                 horizontal={true}
@@ -220,7 +196,6 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Boxing</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -234,7 +209,6 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Karate</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -248,7 +222,6 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Dance</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -262,16 +235,12 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Sports</Text>
                                 </TouchableOpacity>
-
-                                {/**ADD MORE BUTTON Here */}
-
                             </ScrollView>
                         </View>
 
                         <View style={Styles.scrollLabelContainer}>
                             <Text style={Styles.SLClabels}>Distance</Text>
                         </View>
-                        {/* Horizontal ScrollView */}
                         <View style={Styles.scrollHorizontal}>
                             <ScrollView
                                 horizontal={true}
@@ -294,22 +263,22 @@ export class Filters extends Component {
                                     <Text style={Styles.svhbuttonText}>test</Text>
                                 </TouchableOpacity>
 
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}
+                                <TouchableOpacity
+                                    style={{
+                                        backgroundColor: this.state.backgroundColor, height: 45,
+                                        width: 100,
+                                        alignItems: 'center',
+                                        borderColor: '#10C578',
+                                        borderWidth: 2,
+                                        borderRadius: 5,
+                                        marginLeft: 12.5,
+                                        marginRight: 12.5,
+                                        justifyContent: 'center',
+                                    }}
                                     onPress={() => this.changeColor()}
                                 >
                                     <Text style={Styles.svhbuttonText}>Karate</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -337,16 +306,11 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Sports</Text>
                                 </TouchableOpacity>
-
-                                {/**ADD MORE BUTTON Here */}
-
                             </ScrollView>
                         </View>
-
                         <View style={Styles.scrollLabelContainer}>
                             <Text style={Styles.SLClabels}>Distance</Text>
                         </View>
-                        {/* Horizontal ScrollView */}
                         <View style={Styles.scrollHorizontal}>
                             <ScrollView
                                 horizontal={true}
@@ -365,7 +329,6 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Outdoor</Text>
                                 </TouchableOpacity>
-
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor, height: 45,
                                     width: 100,
@@ -379,30 +342,21 @@ export class Filters extends Component {
                                 }}>
                                     <Text style={Styles.svhbuttonText}>Indoor</Text>
                                 </TouchableOpacity>
-
-                                {/**ADD MORE BUTTON Here */}
-
                             </ScrollView>
                         </View>
-
-
-
                     </ScrollView>
                 </View>
-
                 <View style={Styles.btnLast}>
                     <LinearGradient
-                        style={{
-                            borderRadius: 5,
-                        }}
+                        style={{ borderRadius: 5 }}
                         colors={['#10C578', '#10C578', '#10965B']} start={{ x: 0, y: 1 }}
-                        end={{ x: 1, y: 1 }}>
+                        end={{ x: 1, y: 1 }}
+                    >
                         <TouchableOpacity style={Styles.applyBtn}>
                             <Text style={Styles.applyBtnText}>Apply Filter</Text>
                         </TouchableOpacity>
                     </LinearGradient>
                 </View>
-
             </SafeAreaView>
         )
     }
@@ -481,13 +435,11 @@ const Styles = StyleSheet.create({
         marginLeft: 10,
         fontSize: 18,
     },
-
     scrollHorizontal: {
         marginTop: 5,
     },
     svhButton: {
         backgroundColor: '#FFCD00',
-
         height: 45,
         width: 100,
         alignItems: 'center',
@@ -496,10 +448,6 @@ const Styles = StyleSheet.create({
         marginRight: 12.5,
         justifyContent: 'center',
     },
-
-    // svhButton:{
-
-    // },
     svhbuttonText: {
         fontSize: 18,
     },
