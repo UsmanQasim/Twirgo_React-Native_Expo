@@ -9,7 +9,7 @@ export default class Explore extends Component {
                 <View style={Styles.header}>
                     <View style={Styles.contents}>
                         <Ionicons name="chevron-back-outline" size={24} color="black" />
-                        <Text>Explore</Text>
+                        <Text>ExploreT</Text>
                         <AntDesign name="setting" size={24} color="black" />
                     </View>
                 </View>
@@ -36,9 +36,9 @@ const Styles = StyleSheet.create({
         borderBottomRightRadius: 15,
     },
     contents: {
-        //flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
+        flexDirection: 'row',
+       // justifyContent: 'center',
+        //alignItems: 'center',
     },
 
     body: {

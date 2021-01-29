@@ -4,16 +4,20 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from '../screens/Home';
 import Filters from '../screens/Filters';
 import BookingScreen from '../screens/BookingScreen';
-
+import Maps from '../screens/Maps';
 import Profile from '../screens/Profile';
 import Explore from '../screens/Explore';
+
 const Stack = createStackNavigator();
+
 const HomeStackNavigator = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Maps">
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Filters" component={Filters} />
+            <Stack.Screen name="Explore" component={Explore} />
             <Stack.Screen name="BookingScreen" component={BookingScreen} />
+            <Stack.Screen name="Maps" component={Maps} />
         </Stack.Navigator>
     );
 }
@@ -25,12 +29,4 @@ const ProfileStackNavigator = () => {
     )
 }
 
-const ExploreStackNavigator = () => {
-    return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Explore">
-            <Stack.Screen name="Explore" component={Explore} />
-        </Stack.Navigator>
-    )
-}
-
-export { HomeStackNavigator, ProfileStackNavigator, ExploreStackNavigator };
+export { HomeStackNavigator, ProfileStackNavigator, };

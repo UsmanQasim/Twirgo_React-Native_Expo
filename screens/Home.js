@@ -202,6 +202,9 @@ class Home extends Component {
                                 <Text style={{ fontSize: 18, marginTop: 2, }}>Featured</Text>
                                 <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="black" />
                             </View>
+
+
+
                             <View style={Styles.featuresContainerBottom}>
                                 <TouchableOpacity style={Styles.featButton}>
                                     <View style={Styles.imgfeatures}>
@@ -376,12 +379,15 @@ const Styles = StyleSheet.create({
         width: 120,
         height: 100,
     },
+
+
+    
     featuresContainer: {
         //width: '100%',
     },
     featuresContainerBottom: {
-       // width: '99%',
         marginLeft: 5,
+        backgroundColor: 'red',
         //marginRight: 10,
         //justifyContent: 'space-between',
        // borderWidth: 5
