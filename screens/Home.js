@@ -40,7 +40,9 @@ class Home extends Component {
                     <View style={Styles.headerCurveContainer}></View>
                 </View>
                 <View style={Styles.mainSectionContainer}>
-                    <ScrollView style={Styles.mainSection}>
+                    <ScrollView style={Styles.mainSection}
+                        showsVerticalScrollIndicator = {false}
+                    >
                         <View style={Styles.sportsContainer}>
                             <View style={Styles.sportsRow}>
                                 <View style={Styles.sportItem}>
@@ -117,7 +119,7 @@ class Home extends Component {
                         <View style={Styles.pnbContainer}>
                             <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5 }}>
                                 <Text style={{ fontSize: 18, width: '100%' }}>Places near by</Text>
-                                <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="black" />
+                                <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="#27ab67" />
                             </View>
                             <ScrollView
                                 horizontal={true}
@@ -135,8 +137,30 @@ class Home extends Component {
                                         </View>
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <AntDesign name="star" size={18} color="#ffcd00" />
-                                            <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
-                                            <Text style={{ justifySelf: 'flex-end', fontSize: 15, }}>{'\t'} €55</Text>
+                                            <View style={{flexDirection: 'row',justifyContent: 'space-between',width:'85%'}}>
+                                                <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
+                                                <Text style={{ justifyContent: 'flex-end', fontSize: 15, }}>€55</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
+                                </View>
+
+                                <View style={Styles.pnbBottomContainer}>
+                                    <TouchableOpacity style={Styles.pnbButton}>
+                                        <Image
+                                            style={Styles.pnbImage}
+                                            source={require('../assets/backgroundimage.jpg')}
+                                        ></Image>
+                                        <Text style={{ fontSize: 15 }}>SomeText here...</Text>
+                                        <View>
+                                            <Text style={{ alignSelf: 'flex-end' }}>Monthly</Text>
+                                        </View>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center'}}>
+                                            <AntDesign name="star" size={18} color="#ffcd00" />
+                                            <View style={{flexDirection: 'row',justifyContent: 'space-between',width:'85%'}}>
+                                                <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
+                                                <Text style={{ justifyContent: 'flex-end', fontSize: 15, }}>€55</Text>
+                                            </View>
                                         </View>
                                     </TouchableOpacity>
                                 </View>
@@ -153,8 +177,10 @@ class Home extends Component {
                                         </View>
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <AntDesign name="star" size={18} color="#ffcd00" />
-                                            <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
-                                            <Text style={{ justifySelf: 'flex-end', fontSize: 15, }}>{'\t'} €55</Text>
+                                            <View style={{flexDirection: 'row',justifyContent: 'space-between',width:'85%'}}>
+                                                <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
+                                                <Text style={{ justifyContent: 'flex-end', fontSize: 15, }}>€55</Text>
+                                            </View>
                                         </View>
                                     </TouchableOpacity>
                                 </View>
@@ -171,26 +197,10 @@ class Home extends Component {
                                         </View>
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <AntDesign name="star" size={18} color="#ffcd00" />
-                                            <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
-                                            <Text style={{ justifySelf: 'flex-end', fontSize: 15, }}>{'\t'} €55</Text>
-                                        </View>
-                                    </TouchableOpacity>
-                                </View>
-
-                                <View style={Styles.pnbBottomContainer}>
-                                    <TouchableOpacity style={Styles.pnbButton}>
-                                        <Image
-                                            style={Styles.pnbImage}
-                                            source={require('../assets/backgroundimage.jpg')}
-                                        ></Image>
-                                        <Text style={{ fontSize: 15 }}>SomeText here...</Text>
-                                        <View>
-                                            <Text style={{ alignSelf: 'flex-end' }}>Monthly</Text>
-                                        </View>
-                                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                            <AntDesign name="star" size={18} color="#ffcd00" />
-                                            <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
-                                            <Text style={{ justifySelf: 'flex-end', fontSize: 15, }}>{'\t'} €55</Text>
+                                            <View style={{flexDirection: 'row',justifyContent: 'space-between',width:'85%'}}>
+                                                <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
+                                                <Text style={{ justifyContent: 'flex-end', fontSize: 15, }}>€55</Text>
+                                            </View>
                                         </View>
                                     </TouchableOpacity>
                                 </View>
@@ -199,8 +209,8 @@ class Home extends Component {
 
                         <View>
                             <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5, justifyContent: 'space-between' }}>
-                                <Text style={{ fontSize: 18, marginTop: 2, }}>Featured</Text>
-                                <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="black" />
+                                <Text style={{ fontSize: 18, marginTop: 5, }}>Featured</Text>
+                                <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="#27ab67" />
                             </View>
 
                             <View style={Styles.featuredContainer}>
@@ -222,7 +232,61 @@ class Home extends Component {
                                             <Text style={Styles.featuredDescriptionText}> 5.0 Very good</Text>
                                             <Text style={Styles.featuredDescriptionText}> 650meter from centre</Text>
                                             <Text style={Styles.featuredDescriptionBottomText}>Tennis Court</Text>
-                                            <Text style={{ fontSize: 18, textAlign: 'right'}}>€20/h</Text>
+                                            <Text style={{ fontSize: 18, textAlign: 'right' }}>€20/h</Text>
+                                            <Text style={Styles.featuredDescriptionBottomText}>No prepayment needed</Text>
+                                        </View>
+
+                                    </View>
+                                </TouchableOpacity>
+                            </View>
+
+                            <View style={Styles.featuredContainer}>
+                                <TouchableOpacity style={Styles.featuredItemContainer}>
+                                    <Image
+                                        style={Styles.featuredImage}
+                                        source={require('../assets/backgroundimage.jpg')}
+                                    ></Image>
+                                    <View style={Styles.featuredItemDetails}>
+                                        <View style={Styles.featuredHeading}>
+                                            <Text style={Styles.featuredHeadingText}>
+                                                Tennis Milano City..
+                                            </Text>
+                                            <TouchableOpacity style={Styles.featuredHeadingIcon}>
+                                                <Ionicons name="ios-heart-outline" size={24} color="green" />
+                                            </TouchableOpacity>
+                                        </View>
+                                        <View style={Styles.featuredDescription}>
+                                            <Text style={Styles.featuredDescriptionText}> 5.0 Very good</Text>
+                                            <Text style={Styles.featuredDescriptionText}> 650meter from centre</Text>
+                                            <Text style={Styles.featuredDescriptionBottomText}>Tennis Court</Text>
+                                            <Text style={{ fontSize: 18, textAlign: 'right' }}>€20/h</Text>
+                                            <Text style={Styles.featuredDescriptionBottomText}>No prepayment needed</Text>
+                                        </View>
+
+                                    </View>
+                                </TouchableOpacity>
+                            </View>
+
+                            <View style={Styles.featuredContainer}>
+                                <TouchableOpacity style={Styles.featuredItemContainer}>
+                                    <Image
+                                        style={Styles.featuredImage}
+                                        source={require('../assets/backgroundimage.jpg')}
+                                    ></Image>
+                                    <View style={Styles.featuredItemDetails}>
+                                        <View style={Styles.featuredHeading}>
+                                            <Text style={Styles.featuredHeadingText}>
+                                                Tennis Milano City..
+                                            </Text>
+                                            <TouchableOpacity style={Styles.featuredHeadingIcon}>
+                                                <Ionicons name="ios-heart-outline" size={24} color="green" />
+                                            </TouchableOpacity>
+                                        </View>
+                                        <View style={Styles.featuredDescription}>
+                                            <Text style={Styles.featuredDescriptionText}> 5.0 Very good</Text>
+                                            <Text style={Styles.featuredDescriptionText}> 650meter from centre</Text>
+                                            <Text style={Styles.featuredDescriptionBottomText}>Tennis Court</Text>
+                                            <Text style={{ fontSize: 18, textAlign: 'right' }}>€20/h</Text>
                                             <Text style={Styles.featuredDescriptionBottomText}>No prepayment needed</Text>
                                         </View>
 
@@ -369,24 +433,27 @@ const Styles = StyleSheet.create({
     },
     pnbImage: {
         borderRadius: 5,
-        width: 120,
+        width: '100%',
         height: 100,
     },
     featuredContainer: {
         justifyContent: 'center',
         width: '100%',
-        marginVertical: 10
+        marginVertical: 1
     },
     featuredItemContainer: {
         margin: 10,
+        height: 150,
         borderRadius: 5,
         flexDirection: 'row',
         backgroundColor: 'lightgrey',
     },
     featuredImage: {
         borderRadius: 5,
-        resizeMode: 'contain',
-        width: '40%'
+        resizeMode: 'cover',
+        padding: 5,
+        width: '40%',
+        height: 150,
     },
     featuredItemDetails: {
         width: '58%'
