@@ -10,13 +10,14 @@ class Register extends Component {
         email: ''
     }
     signUp = () => {
-        if (this.state.password == '' || this.state.conPassword == '' || this.state.email == '' || this.state.fullName == '') {
-            Alert.alert("Invalid Token", "Maybe, You forgot to fill all the fields", [{ text: "I'll fill them right away!" }]);
-        } else if (this.state.password != this.state.conPassword) {
-            Alert.alert("Woopsies!", "Passwords do not match", [{ text: "Let me correct that" }]);
-        } else {
-            Alert.alert("Perfect", "", [{ text: "Proceed!", onPress: () => this.props.navigation.navigate('Home') }]);
-        }
+        this.props.navigation.navigate('Home');
+        // if (this.state.password == '' || this.state.conPassword == '' || this.state.email == '' || this.state.fullName == '') {
+        //     Alert.alert("Invalid Token", "Maybe, You forgot to fill all the fields", [{ text: "I'll fill them right away!" }]);
+        // } else if (this.state.password != this.state.conPassword) {
+        //     Alert.alert("Woopsies!", "Passwords do not match", [{ text: "Let me correct that" }]);
+        // } else {
+        //     Alert.alert("Perfect", "", [{ text: "Proceed!", onPress: () => this.props.navigation.navigate('Home') }]);
+        // }
     }
     static navigationOptions = {
         headerShown: false
@@ -69,7 +70,7 @@ class Register extends Component {
                             end={{ x: 1, y: 1 }}>
                             <TouchableOpacity
                                 style={Styles.btn}
-                                onPress={() => this.SignUp()}>
+                                onPress={() => this.props.navigation.navigate('Application')}>
                                 <Text style={Styles.btnText}>Register</Text>
                             </TouchableOpacity>
                         </LinearGradient>

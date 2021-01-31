@@ -41,7 +41,7 @@ class Home extends Component {
                 </View>
                 <View style={Styles.mainSectionContainer}>
                     <ScrollView style={Styles.mainSection}
-                        showsVerticalScrollIndicator = {false}
+                        showsVerticalScrollIndicator={false}
                     >
                         <View style={Styles.sportsContainer}>
                             <View style={Styles.sportsRow}>
@@ -117,9 +117,15 @@ class Home extends Component {
                         </View>
 
                         <View style={Styles.pnbContainer}>
-                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5 }} onPress={() => this.props.navigation.navigate('Explore')}>
-                                <Text style={{ fontSize: 18, width: '100%' }}>Places near by</Text>
-                                <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="#27ab67" />
+                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5 }}>
+                                <Text
+                                    style={{ fontSize: 18, width: '100%' }}
+                                    onPress={() => this.props.navigation.navigate('Explore')}
+                                >Places near by</Text>
+                                <Ionicons
+                                    style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="#27ab67"
+                                    onPress={() => this.props.navigation.navigate('Explore')}
+                                />
                             </View>
                             <ScrollView
                                 horizontal={true}
@@ -137,27 +143,7 @@ class Home extends Component {
                                         </View>
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <AntDesign name="star" size={18} color="#ffcd00" />
-                                            <View style={{flexDirection: 'row',justifyContent: 'space-between',width:'85%'}}>
-                                                <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
-                                                <Text style={{ justifyContent: 'flex-end', fontSize: 15, }}>€55</Text>
-                                            </View>
-                                        </View>
-                                    </TouchableOpacity>
-                                </View>
-
-                                <View style={Styles.pnbBottomContainer}>
-                                    <TouchableOpacity style={Styles.pnbButton}>
-                                        <Image
-                                            style={Styles.pnbImage}
-                                            source={require('../assets/backgroundimage.jpg')}
-                                        ></Image>
-                                        <Text style={{ fontSize: 15 }}>SomeText here...</Text>
-                                        <View>
-                                            <Text style={{ alignSelf: 'flex-end' }}>Monthly</Text>
-                                        </View>
-                                        <View style={{ flexDirection: 'row', alignItems: 'center'}}>
-                                            <AntDesign name="star" size={18} color="#ffcd00" />
-                                            <View style={{flexDirection: 'row',justifyContent: 'space-between',width:'85%'}}>
+                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '85%' }}>
                                                 <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
                                                 <Text style={{ justifyContent: 'flex-end', fontSize: 15, }}>€55</Text>
                                             </View>
@@ -177,7 +163,7 @@ class Home extends Component {
                                         </View>
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <AntDesign name="star" size={18} color="#ffcd00" />
-                                            <View style={{flexDirection: 'row',justifyContent: 'space-between',width:'85%'}}>
+                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '85%' }}>
                                                 <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
                                                 <Text style={{ justifyContent: 'flex-end', fontSize: 15, }}>€55</Text>
                                             </View>
@@ -197,7 +183,27 @@ class Home extends Component {
                                         </View>
                                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                                             <AntDesign name="star" size={18} color="#ffcd00" />
-                                            <View style={{flexDirection: 'row',justifyContent: 'space-between',width:'85%'}}>
+                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '85%' }}>
+                                                <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
+                                                <Text style={{ justifyContent: 'flex-end', fontSize: 15, }}>€55</Text>
+                                            </View>
+                                        </View>
+                                    </TouchableOpacity>
+                                </View>
+
+                                <View style={Styles.pnbBottomContainer}>
+                                    <TouchableOpacity style={Styles.pnbButton}>
+                                        <Image
+                                            style={Styles.pnbImage}
+                                            source={require('../assets/backgroundimage.jpg')}
+                                        ></Image>
+                                        <Text style={{ fontSize: 15 }}>SomeText here...</Text>
+                                        <View>
+                                            <Text style={{ alignSelf: 'flex-end' }}>Monthly</Text>
+                                        </View>
+                                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                            <AntDesign name="star" size={18} color="#ffcd00" />
+                                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', width: '85%' }}>
                                                 <Text style={{ fontSize: 15 }}>4.3 (418)</Text>
                                                 <Text style={{ justifyContent: 'flex-end', fontSize: 15, }}>€55</Text>
                                             </View>
@@ -208,9 +214,12 @@ class Home extends Component {
                         </View>
 
                         <View>
-                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5, justifyContent: 'space-between' }} onPress={() => this.props.navigation.navigate('Explore')}>
-                                <Text style={{ fontSize: 18, marginTop: 5, }}>Featured</Text>
-                                <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="#27ab67" />
+                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5, justifyContent: 'space-between' }}>
+                                <Text style={{ fontSize: 18, marginTop: 5, }}
+                                    onPress={() => this.props.navigation.navigate('Explore')}
+                                >Featured</Text>
+                                <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="#27ab67"
+                                    onPress={() => this.props.navigation.navigate('Explore')} />
                             </View>
 
                             <View style={Styles.featuredContainer}>
@@ -307,7 +316,7 @@ const Styles = StyleSheet.create({
         flexDirection: 'column',
     },
     headerContainer: {
-        flex: 3 / 2,
+        flex: 1,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -335,7 +344,7 @@ const Styles = StyleSheet.create({
         flexDirection: 'row'
     },
     headerSearchContainer: {
-        flex: 3 / 2,
+        flex: 1,
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',

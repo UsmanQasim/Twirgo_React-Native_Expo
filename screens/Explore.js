@@ -276,7 +276,7 @@ const Styles = StyleSheet.create({
         //alignItems: 'center',
     },
     header: {
-        flex: 1,
+        flex: 1.5,
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'gold',
