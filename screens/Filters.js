@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Searchbar } from 'react-native-paper';
-import { SafeAreaView, TouchableHighlight, View, Text, ImageBackground, Image, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
+import { SafeAreaView, TouchableHighlight, View, Text, ImageBackground, Image, TouchableOpacity, StyleSheet, TextInput, Button } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, EvilIcons, Octicons, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { event } from 'react-native-reanimated';
 
 export class Filters extends Component {
 
@@ -11,18 +12,47 @@ export class Filters extends Component {
         super(props)
 
         this.state = {
-            //old stuff
-            backgroundColor: 'lightgreen',
-
-            budget: [
-                { key: 0, name: 'Boxing' },
+            budgetButtons: [
+                { key: 0, name: '$0-$50' },
+                { key: 1, name: '$50-$100' },
+                { key: 2, name: '$100-$200' },
+                { key: 3, name: '$200-$500' }
+            ],
+            selectedBudgetIndex: 0,
+            sportButtons: [
+                { key: 0, name: 'Gym' },
                 { key: 1, name: 'Karate' },
                 { key: 2, name: 'Dance' },
-                { key: 3, name: 'Sports' }
-            ]
-
+                { key: 3, name: 'Tennis' }
+            ],
+            selectedSportIndex: 0,
+            activitiesButtons: [
+                { key: 0, name: 'Training' },
+                { key: 1, name: 'Pilots' },
+                { key: 2, name: 'TRX' },
+                { key: 3, name: 'Yoga' }
+            ],
+            selectedActivitiesIndex: 2,
+            distanceButtons: [
+                { key: 0, name: 'In 3 mi' },
+                { key: 1, name: 'In 5 mi' },
+                { key: 2, name: 'In 10 mi' },
+                { key: 3, name: 'In 20 mi' }
+            ],
+            selectedDistanceIndex: 0,
+            outDoorAreaButtons: [
+                { key: 0, name: 'Outdoor' },
+                { key: 1, name: 'Indoor' },
+            ],
+            selectedOutDoorArea: 1
         }
     }
+
+    updateBudget = (updatedBudget) => { this.setState({ selectedBudgetIndex: updatedBudget }); }
+    updateSport = (updatedSport) => { this.setState({ selectedSportIndex: updatedSport }); }
+    updateActivities = (updatedActivities) => { this.setState({ selectedActivitiesIndex: updatedActivities }); }
+    updateDistance = (updatedDistance) => { this.setState({ selectedDistanceIndex: updatedDistance }); }
+    updateOutDoorArea = (updatedOutDoorArea) => { this.setState({ selectedOutDoorArea: updatedOutDoorArea }); }
 
 
     render() {
@@ -53,146 +83,40 @@ export class Filters extends Component {
                             <Text style={Styles.SLClabels}>Budget</Text>
                         </View>
                         <View style={Styles.scrollHorizontal}>
-                            <ScrollView
-                                horizontal={true}
-                                showsHorizontalScrollIndicator={false}
-                            >
-                                {
-                                    this.state.budget.map(
-                                        ({ key, name }) => {
-                                            <TouchableOpacity id={key} style={{
-                                                backgroundColor: this.state.backgroundColor,
-                                                borderColor: '#10C578',
-                                                borderWidth: 2,
-                                                height: 45,
-                                                width: 100,
-                                                alignItems: 'center',
-                                                borderRadius: 5,
-                                                marginLeft: 12.5,
-                                                marginRight: 12.5,
-                                                justifyContent: 'center',
-                                            }}>
+                            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                                {this.state.budgetButtons.map(
+                                    ({ key, name }) => {
+                                        return (
+                                            <TouchableOpacity
+                                                key={key}
+                                                style={(this.state.selectedBudgetIndex == key) ? Styles.btnClicked : Styles.btnOG}
+                                                onPress={() => this.updateBudget(key)}
+                                            >
                                                 <Text style={Styles.svhbuttonText}>{name}</Text>
                                             </TouchableOpacity>
-                                        }
-                                    )
-                                }
-
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor,
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Boxing</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Karate</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Dance</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Sports</Text>
-                                </TouchableOpacity>
+                                        );
+                                    }
+                                )}
                             </ScrollView>
                         </View>
                         <View style={Styles.scrollLabelContainer}>
                             <Text style={Styles.SLClabels}>Sport</Text>
                         </View>
                         <View style={Styles.scrollHorizontal}>
-                            <ScrollView
-                                horizontal={true}
-                                showsHorizontalScrollIndicator={false}
-                            >
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Boxing</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Karate</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Dance</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Sports</Text>
-                                </TouchableOpacity>
+                            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                                {this.state.sportButtons.map(
+                                    ({ key, name }) => {
+                                        return (
+                                            <TouchableOpacity
+                                                key={key}
+                                                style={(this.state.selectedSportIndex == key) ? Styles.btnClicked : Styles.btnOG}
+                                                onPress={() => this.updateSport(key)}
+                                            >
+                                                <Text style={Styles.svhbuttonText}>{name}</Text>
+                                            </TouchableOpacity>
+                                        );
+                                    }
+                                )}
                             </ScrollView>
                         </View>
 
@@ -200,62 +124,20 @@ export class Filters extends Component {
                             <Text style={Styles.SLClabels}>Activities</Text>
                         </View>
                         <View style={Styles.scrollHorizontal}>
-                            <ScrollView
-                                horizontal={true}
-                                showsHorizontalScrollIndicator={false}
-                            >
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Boxing</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Karate</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Dance</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Sports</Text>
-                                </TouchableOpacity>
+                            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                                {this.state.activitiesButtons.map(
+                                    ({ key, name }) => {
+                                        return (
+                                            <TouchableOpacity
+                                                key={key}
+                                                style={(this.state.selectedActivitiesIndex == key) ? Styles.btnClicked : Styles.btnOG}
+                                                onPress={() => this.updateActivities(key)}
+                                            >
+                                                <Text style={Styles.svhbuttonText}>{name}</Text>
+                                            </TouchableOpacity>
+                                        );
+                                    }
+                                )}
                             </ScrollView>
                         </View>
 
@@ -263,106 +145,40 @@ export class Filters extends Component {
                             <Text style={Styles.SLClabels}>Distance</Text>
                         </View>
                         <View style={Styles.scrollHorizontal}>
-                            <ScrollView
-                                horizontal={true}
-                                showsHorizontalScrollIndicator={false}
-                            >
-                                <TouchableOpacity
-                                    style={{
-                                        backgroundColor: this.state.backgroundColor, height: 45,
-                                        width: 100,
-                                        alignItems: 'center',
-                                        borderColor: '#10C578',
-                                        borderWidth: 2,
-                                        borderRadius: 5,
-                                        marginLeft: 12.5,
-                                        marginRight: 12.5,
-                                        justifyContent: 'center',
-                                    }}
-                                    onPress={() => this.changeColor()}
-                                >
-                                    <Text style={Styles.svhbuttonText}>test</Text>
-                                </TouchableOpacity>
-
-                                <TouchableOpacity
-                                    style={{
-                                        backgroundColor: this.state.backgroundColor, height: 45,
-                                        width: 100,
-                                        alignItems: 'center',
-                                        borderColor: '#10C578',
-                                        borderWidth: 2,
-                                        borderRadius: 5,
-                                        marginLeft: 12.5,
-                                        marginRight: 12.5,
-                                        justifyContent: 'center',
-                                    }}
-                                    onPress={() => this.changeColor()}
-                                >
-                                    <Text style={Styles.svhbuttonText}>Karate</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Dance</Text>
-                                </TouchableOpacity>
-
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Sports</Text>
-                                </TouchableOpacity>
+                            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                                {this.state.distanceButtons.map(
+                                    ({ key, name }) => {
+                                        return (
+                                            <TouchableOpacity
+                                                key={key}
+                                                style={(this.state.selectedDistanceIndex == key) ? Styles.btnClicked : Styles.btnOG}
+                                                onPress={() => this.updateDistance(key)}
+                                            >
+                                                <Text style={Styles.svhbuttonText}>{name}</Text>
+                                            </TouchableOpacity>
+                                        );
+                                    }
+                                )}
                             </ScrollView>
                         </View>
                         <View style={Styles.scrollLabelContainer}>
-                            <Text style={Styles.SLClabels}>Distance</Text>
+                            <Text style={Styles.SLClabels}>Outdoor Area</Text>
                         </View>
                         <View style={Styles.scrollHorizontal}>
-                            <ScrollView
-                                horizontal={true}
-                                showsHorizontalScrollIndicator={false}
-                            >
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Outdoor</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity style={{
-                                    backgroundColor: this.state.backgroundColor, height: 45,
-                                    width: 100,
-                                    alignItems: 'center',
-                                    borderColor: '#10C578',
-                                    borderWidth: 2,
-                                    borderRadius: 5,
-                                    marginLeft: 12.5,
-                                    marginRight: 12.5,
-                                    justifyContent: 'center',
-                                }}>
-                                    <Text style={Styles.svhbuttonText}>Indoor</Text>
-                                </TouchableOpacity>
+                            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                                {this.state.outDoorAreaButtons.map(
+                                    ({ key, name }) => {
+                                        return (
+                                            <TouchableOpacity
+                                                key={key}
+                                                style={(this.state.selectedOutDoorArea == key) ? Styles.btnClicked : Styles.btnOG}
+                                                onPress={() => this.updateOutDoorArea(key)}
+                                            >
+                                                <Text style={Styles.svhbuttonText}>{name}</Text>
+                                            </TouchableOpacity>
+                                        );
+                                    }
+                                )}
                             </ScrollView>
                         </View>
                     </ScrollView>
@@ -384,6 +200,36 @@ export class Filters extends Component {
 }
 
 const Styles = StyleSheet.create({
+
+
+
+    btnOG: {
+        backgroundColor: 'white',
+        borderColor: '#10C578',
+        borderWidth: 2,
+        height: 45,
+        width: 100,
+        alignItems: 'center',
+        borderRadius: 5,
+        marginLeft: 12.5,
+        marginRight: 12.5,
+        justifyContent: 'center',
+    },
+
+    btnClicked: {
+        backgroundColor: 'green',
+        borderColor: '#10C578',
+        borderWidth: 2,
+        height: 45,
+        width: 100,
+        alignItems: 'center',
+        borderRadius: 5,
+        marginLeft: 12.5,
+        marginRight: 12.5,
+        justifyContent: 'center',
+    },
+
+
     container: {
         flex: 1,
         justifyContent: 'center',
