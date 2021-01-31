@@ -12,9 +12,14 @@ export class Filters extends Component {
 
         this.state = {
             //old stuff
-            backgroundColor: 'blue',
+            backgroundColor: 'lightgreen',
 
-            
+            budget: [
+                { key: 0, name: 'Boxing' },
+                { key: 1, name: 'Karate' },
+                { key: 2, name: 'Dance' },
+                { key: 3, name: 'Sports' }
+            ]
 
         }
     }
@@ -52,6 +57,27 @@ export class Filters extends Component {
                                 horizontal={true}
                                 showsHorizontalScrollIndicator={false}
                             >
+                                {
+                                    this.state.budget.map(
+                                        ({ key, name }) => {
+                                            <TouchableOpacity id={key} style={{
+                                                backgroundColor: this.state.backgroundColor,
+                                                borderColor: '#10C578',
+                                                borderWidth: 2,
+                                                height: 45,
+                                                width: 100,
+                                                alignItems: 'center',
+                                                borderRadius: 5,
+                                                marginLeft: 12.5,
+                                                marginRight: 12.5,
+                                                justifyContent: 'center',
+                                            }}>
+                                                <Text style={Styles.svhbuttonText}>{name}</Text>
+                                            </TouchableOpacity>
+                                        }
+                                    )
+                                }
+
                                 <TouchableOpacity style={{
                                     backgroundColor: this.state.backgroundColor,
                                     borderColor: '#10C578',

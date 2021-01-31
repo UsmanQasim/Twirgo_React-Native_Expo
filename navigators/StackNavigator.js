@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import Home from '../screens/Home';
 import Filters from '../screens/Filters';
 import BookingScreen from '../screens/BookingScreen';
-import Maps from '../screens/Maps';
+// import Maps from '../screens/Maps';
 import Profile from '../screens/Profile';
 import Explore from '../screens/Explore';
 
@@ -17,7 +17,7 @@ const HomeStackNavigator = () => {
             <Stack.Screen name="Filters" component={Filters} />
             <Stack.Screen name="Explore" component={Explore} />
             <Stack.Screen name="BookingScreen" component={BookingScreen} />
-            <Stack.Screen name="Maps" component={Maps} />
+            {/* <Stack.Screen name="Maps" component={Maps} /> */}
         </Stack.Navigator>
     );
 }
