@@ -28,7 +28,11 @@ const DrawerComponent = (props) => {
                     Add items that are only for show here
                     Or the Links to any webpages
                 */}
-                <DrawerItem label="Logout" />
+                <DrawerItem label="My Bookings" />
+                <DrawerItem label="feedback" />
+                <DrawerItem label="Contact US" />
+                <DrawerItem label="Rate us" />
+                <DrawerItem label="Log Out" />
             </DrawerContentScrollView>
         </SafeAreaView>
     );

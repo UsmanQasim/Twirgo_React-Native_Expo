@@ -15,7 +15,7 @@ class Register extends Component {
         } else if (this.state.password != this.state.conPassword) {
             Alert.alert("Woopsies!", "Passwords do not match", [{ text: "Let me correct that" }]);
         } else {
-            Alert.alert("Perfect", "", [{ text: "Proceed!", onPress: () => this.props.navigation.navigate('optionScreen') }]);
+            Alert.alert("Perfect", "", [{ text: "Proceed!", onPress: () => this.props.navigation.navigate('Home') }]);
         }
     }
     static navigationOptions = {
@@ -69,7 +69,7 @@ class Register extends Component {
                             end={{ x: 1, y: 1 }}>
                             <TouchableOpacity
                                 style={Styles.btn}
-                                onPress={() => this.signUp()}>
+                                onPress={() => this.SignUp()}>
                                 <Text style={Styles.btnText}>Register</Text>
                             </TouchableOpacity>
                         </LinearGradient>
@@ -100,7 +100,7 @@ const Styles = StyleSheet.create({
         height: 110,
     },
     topContainer: {
-        flex: 2,
+        flex:1,
         justifyContent: 'flex-end',
         alignItems: 'center',
         marginBottom: 25,
@@ -111,7 +111,7 @@ const Styles = StyleSheet.create({
         marginBottom: 25,
     },
     bottomContainer: {
-        flex: 1,
+        flex: 0.5,
     },
     greetText: {
         fontSize: 60,

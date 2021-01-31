@@ -117,7 +117,7 @@ class Home extends Component {
                         </View>
 
                         <View style={Styles.pnbContainer}>
-                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5 }}>
+                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5 }} onPress={() => this.props.navigation.navigate('Explore')}>
                                 <Text style={{ fontSize: 18, width: '100%' }}>Places near by</Text>
                                 <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="#27ab67" />
                             </View>
@@ -208,7 +208,7 @@ class Home extends Component {
                         </View>
 
                         <View>
-                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5, justifyContent: 'space-between' }}>
+                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5, justifyContent: 'space-between' }} onPress={() => this.props.navigation.navigate('Explore')}>
                                 <Text style={{ fontSize: 18, marginTop: 5, }}>Featured</Text>
                                 <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="#27ab67" />
                             </View>
@@ -289,7 +289,6 @@ class Home extends Component {
                                             <Text style={{ fontSize: 18, textAlign: 'right' }}>€20/h</Text>
                                             <Text style={Styles.featuredDescriptionBottomText}>No prepayment needed</Text>
                                         </View>
-
                                     </View>
                                 </TouchableOpacity>
                             </View>

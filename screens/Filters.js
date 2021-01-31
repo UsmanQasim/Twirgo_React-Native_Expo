@@ -62,27 +62,27 @@ export class Filters extends Component {
                 style={Styles.container}
             >
                 <SafeAreaView style={Styles.container}>
-                    
-                        <View style={Styles.headerContainer}>
-                            <View style={Styles.headerTopContainer}>
-                                <TouchableOpacity style={Styles.headerBtn}>
-                                    <Ionicons name="chevron-back" size={40} color="#10C578" style={{ alignSelf: 'flex-end' }} />
-                                </TouchableOpacity>
-                                <View style={Styles.headerIconContainer}>
-                                    <Text style={Styles.headerText}>Filters</Text>
-                                    <Text style={{ fontSize: 20 }}>Reset</Text>
-                                </View>
+
+                    <View style={Styles.headerContainer}>
+                        <View style={Styles.headerTopContainer}>
+                            <TouchableOpacity style={Styles.headerBtn}>
+                                <Ionicons name="chevron-back" size={40} color="#10C578" style={{ alignSelf: 'flex-end' }} />
+                            </TouchableOpacity>
+                            <View style={Styles.headerIconContainer}>
+                                <Text style={Styles.headerText}>Filters</Text>
+                                <Text style={{ fontSize: 20 }}>Reset</Text>
                             </View>
-                            <View style={Styles.headerSearchContainer}>
-                                <Searchbar
-                                    style={Styles.headerSearchBar}
-                                    placeholder="Search"
-                                    onChangeText={query => { this.setState({ firstQuery: query }); }}
-                                />
-                            </View>
-                            <View style={Styles.headerCurveContainer}></View>
                         </View>
-                    
+                        <View style={Styles.headerSearchContainer}>
+                            <Searchbar
+                                style={Styles.headerSearchBar}
+                                placeholder="Search"
+                                onChangeText={query => { this.setState({ firstQuery: query }); }}
+                            />
+                        </View>
+                        <View style={Styles.headerCurveContainer}></View>
+                    </View>
+
                     <View style={Styles.mainSectionContainer}>
                         <ScrollView style={Styles.mainSection}>
                             <View style={Styles.scrollLabelContainer}>
@@ -195,7 +195,7 @@ export class Filters extends Component {
                                     colors={['#10C578', '#10C578', '#10965B']} start={{ x: 0, y: 1 }}
                                     end={{ x: 1, y: 1 }}
                                 >
-                                    <TouchableOpacity style={Styles.applyBtn}>
+                                    <TouchableOpacity style={Styles.applyBtn} onPress={() => this.props.navigation.navigate('Result')}>
                                         <Text style={Styles.applyBtnText}>Apply Filter</Text>
                                     </TouchableOpacity>
                                 </LinearGradient>
@@ -204,7 +204,7 @@ export class Filters extends Component {
                     </View>
 
                 </SafeAreaView>
-                </KeyboardAvoidingView>
+            </KeyboardAvoidingView>
         )
     }
 }
@@ -213,8 +213,8 @@ const Styles = StyleSheet.create({
 
 
 
-                    btnOG: {
-                    backgroundColor: 'white',
+    btnOG: {
+        backgroundColor: 'white',
         borderColor: '#10C578',
         borderWidth: 2,
         height: 45,
@@ -227,7 +227,7 @@ const Styles = StyleSheet.create({
     },
 
     btnClicked: {
-                    backgroundColor: '#09ec88',
+        backgroundColor: '#09ec88',
         borderColor: '#10C578',
         borderWidth: 2,
         height: 45,
@@ -241,18 +241,18 @@ const Styles = StyleSheet.create({
 
 
     container: {
-                    flex: 1,
+        flex: 1,
         justifyContent: 'center',
         flexDirection: 'column',
     },
     headerContainer: {
-                    flex: 3 / 2,
+        flex: 3 / 2,
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
     },
     headerTopContainer: {
-                    paddingTop: 10,
+        paddingTop: 10,
         flex: 4,
         backgroundColor: '#ffcd00',
         width: '100%',
@@ -261,63 +261,63 @@ const Styles = StyleSheet.create({
         alignItems: 'center',
     },
     headerBtn: {
-                    justifyContent: 'center',
+        justifyContent: 'center',
         width: '10%',
         margin: 20,
         alignItems: 'center'
     },
     headerText: {
-                    fontSize: 30,
+        fontSize: 30,
     },
     headerIconContainer: {
-                    alignItems: 'center',
+        alignItems: 'center',
         width: '70%',
         justifyContent: 'space-between',
         flexDirection: 'row'
     },
     headerSearchContainer: {
-                    flex: 3,
+        flex: 3,
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#ffcd00'
     },
     headerSearchBar: {
-                    width: '80%',
+        width: '80%',
         height: 60
     },
     headerCurveContainer: {
-                    flex: 1,
+        flex: 1,
         width: '100%',
         backgroundColor: '#ffcd00',
         borderBottomLeftRadius: 15,
         borderBottomRightRadius: 15,
     },
     mainSectionContainer: {
-                    flex: 5
+        flex: 5
     },
     mainSection: {
-                    height: '100%',
+        height: '100%',
         display: 'flex',
         width: '100%',
         overflow: 'scroll'
     },
     scrollLabelContainer: {
-                    height: 50,
+        height: 50,
         width: '100%',
         marginTop: 5,
         justifyContent: 'center',
     },
     SLClabels: {
-                    color: 'black',
+        color: 'black',
         marginLeft: 10,
         fontSize: 18,
     },
     scrollHorizontal: {
-                    marginTop: 5,
+        marginTop: 5,
     },
     svhButton: {
-                    backgroundColor: '#FFCD00',
+        backgroundColor: '#FFCD00',
         height: 45,
         width: 100,
         alignItems: 'center',
@@ -327,15 +327,15 @@ const Styles = StyleSheet.create({
         justifyContent: 'center',
     },
     svhbuttonText: {
-                    fontSize: 18,
+        fontSize: 18,
         color: 'black',
     },
     svhbuttonTextClicked: {
-                    fontSize: 18,
+        fontSize: 18,
         color: 'white',
     },
     btnLast: {
-                    marginTop: 15,
+        marginTop: 15,
         marginBottom: 5,
         //backgroundColor: 'red',
         //backgroundColor: 'transparent',
@@ -344,14 +344,14 @@ const Styles = StyleSheet.create({
     },
     applyBtn: {
 
-                    width: 220,
+        width: 220,
         height: 35,
         justifyContent: 'center',
         alignItems: 'center',
         margin: 10,
     },
     applyBtnText: {
-                    color: 'white',
+        color: 'white',
         fontSize: 18,
     },
 })

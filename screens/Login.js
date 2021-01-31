@@ -16,7 +16,7 @@ class Login extends Component {
         } else if (this.state.password != this.state.conPassword) {
             Alert.alert("Woopsies!", "Passwords do not match", [{ text: "Let me correct that" }]);
         } else {
-            Alert.alert("Perfect", "", [{ text: "Proceed!", onPress: () => this.props.navigation.navigate('optionScreen') }]);
+            Alert.alert("Perfect", "", [{ text: "Proceed!", onPress: () => this.props.navigation.navigate('Home') }]);
         }
     }
     static navigationOptions = {

@@ -7,15 +7,17 @@ import BookingScreen from '../screens/BookingScreen';
 // import Maps from '../screens/Maps';
 import Profile from '../screens/Profile';
 import Explore from '../screens/Explore';
+import Result from '../screens/Result';
 
 const Stack = createStackNavigator();
 
 const HomeStackNavigator = () => {
     return (
-        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+        <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Result">
             <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Filters" component={Filters} />
             <Stack.Screen name="Explore" component={Explore} />
+            <Stack.Screen name="Result" component={Result} />
             <Stack.Screen name="BookingScreen" component={BookingScreen} />
             {/* <Stack.Screen name="Maps" component={Maps} /> */}
         </Stack.Navigator>

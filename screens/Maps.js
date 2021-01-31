@@ -58,6 +58,7 @@ export default class Maps extends Component {
                     >
                         <TouchableOpacity
                             style={Styles.btn}
+                            onPress={() => this.props.navigation.navigate('Filters')}
                         // onPress={Keyboard.dismiss}
                         >
                             <Text style={Styles.btnText}>Filter</Text>
