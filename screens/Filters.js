@@ -7,21 +7,18 @@ import { AntDesign, EvilIcons, Octicons, Ionicons, MaterialCommunityIcons } from
 
 export class Filters extends Component {
 
-    static navigationOptions = {
-        header: false
-    }
-    state = {
-        backgroundColor: 'white',
-        pressed: false,
-    };
+    constructor(props) {
+        super(props)
 
-    changeColor() {
-        if (!this.state.pressed) {
-            this.setState({ backgroundColor: 'white', pressed: true });
-        } else {
-            this.setState({ backgroundColor: '#10C578', pressed: false });
+        this.state = {
+            //old stuff
+            backgroundColor: 'blue',
+
+            
+
         }
     }
+
 
     render() {
         return (
@@ -31,11 +28,9 @@ export class Filters extends Component {
                         <TouchableOpacity style={Styles.headerBtn}>
                             <Ionicons name="chevron-back" size={40} color="#10C578" style={{ alignSelf: 'flex-end' }} />
                         </TouchableOpacity>
-                        <Text style={Styles.headerText}>Filters</Text>
                         <View style={Styles.headerIconContainer}>
-                            <Text
-                                style={{ fontSize: 30, alignSelf: 'flex-end' }}
-                            >Reset</Text>
+                            <Text style={Styles.headerText}>Filters</Text>
+                            <Text style={{ fontSize: 20 }}>Reset</Text>
                         </View>
                     </View>
                     <View style={Styles.headerSearchContainer}>
@@ -395,7 +390,8 @@ const Styles = StyleSheet.create({
     headerIconContainer: {
         alignItems: 'center',
         width: '70%',
-        backgroundColor: 'white'
+        justifyContent: 'space-between',
+        flexDirection: 'row'
     },
     headerSearchContainer: {
         flex: 3,
