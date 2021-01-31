@@ -197,43 +197,37 @@ class Home extends Component {
                             </ScrollView>
                         </View>
 
-                        <View style={Styles.featuresContainer}>
-                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5 }}>
+                        <View>
+                            <View style={{ flexDirection: 'row', marginLeft: 5, marginRight: 5, justifyContent: 'space-between' }}>
                                 <Text style={{ fontSize: 18, marginTop: 2, }}>Featured</Text>
                                 <Ionicons style={{ textAlign: 'right' }} name="caret-forward-outline" size={24} color="black" />
                             </View>
 
-
-
-                            <View style={Styles.featuresContainerBottom}>
-                                <TouchableOpacity style={Styles.featButton}>
-                                    <View style={Styles.imgfeatures}>
-                                        <Image
-                                            style={Styles.pnbImage}
-                                            source={require('../assets/backgroundimage.jpg')}
-                                        ></Image>
-                                    </View>
-                                    <View style={{}}>
-
-                                        <View style={{ }}>
-                                            <Text style={{ fontSize: 18, }}>Tennis Milano City..</Text>
-                                            <TouchableOpacity
-                                                style={{ }}
-                                            >
-                                                <Ionicons
-                                                    style={{ backgroundColor: 'pink' }}
-                                                    name="ios-heart-outline" size={24} color="green" />
+                            <View style={Styles.featuredContainer}>
+                                <TouchableOpacity style={Styles.featuredItemContainer}>
+                                    <Image
+                                        style={Styles.featuredImage}
+                                        source={require('../assets/backgroundimage.jpg')}
+                                    ></Image>
+                                    <View style={Styles.featuredItemDetails}>
+                                        <View style={Styles.featuredHeading}>
+                                            <Text style={Styles.featuredHeadingText}>
+                                                Tennis Milano City..
+                                            </Text>
+                                            <TouchableOpacity style={Styles.featuredHeadingIcon}>
+                                                <Ionicons name="ios-heart-outline" size={24} color="green" />
                                             </TouchableOpacity>
                                         </View>
-
-                                        <View style={Styles.featText1}>
-                                            <Text style={{ fontSize: 18, }}> 5.0 Very good</Text>
-                                            <Text style={{ fontSize: 15, }}> 650meter from centre</Text>
+                                        <View style={Styles.featuredDescription}>
+                                            <Text style={Styles.featuredDescriptionText}> 5.0 Very good</Text>
+                                            <Text style={Styles.featuredDescriptionText}> 650meter from centre</Text>
+                                            <Text style={Styles.featuredDescriptionBottomText}>Tennis Court</Text>
+                                            <Text style={{ fontSize: 18, textAlign: 'right'}}>€20/h</Text>
+                                            <Text style={Styles.featuredDescriptionBottomText}>No prepayment needed</Text>
                                         </View>
+
                                     </View>
                                 </TouchableOpacity>
-                                {/*</View>*/}
-
                             </View>
                         </View>
                     </ScrollView>
@@ -369,7 +363,6 @@ const Styles = StyleSheet.create({
         marginLeft: 5,
         marginTop: 5,
         marginRight: 8
-
     },
     pnbButton: {
         width: 150,
@@ -379,45 +372,50 @@ const Styles = StyleSheet.create({
         width: 120,
         height: 100,
     },
-
-
-    
-    featuresContainer: {
-        //width: '100%',
+    featuredContainer: {
+        justifyContent: 'center',
+        width: '100%',
+        marginVertical: 10
     },
-    featuresContainerBottom: {
-        marginLeft: 5,
-        backgroundColor: 'red',
-        //marginRight: 10,
-        //justifyContent: 'space-between',
-       // borderWidth: 5
-    },
-    featuresIneerContainer: {
-        //flexDirection: 'row',
-    },
-    featButton: {
+    featuredItemContainer: {
+        margin: 10,
+        borderRadius: 5,
         flexDirection: 'row',
-        backgroundColor: 'gray',
-        //width: '100%',
-        marginBottom: 5,
-        marginTop: 5,
+        backgroundColor: 'lightgrey',
     },
-    featText: {
-        marginLeft: 4,
-        marginTop: 2,
-        //flex: 1,
+    featuredImage: {
+        borderRadius: 5,
+        resizeMode: 'contain',
+        width: '40%'
+    },
+    featuredItemDetails: {
+        width: '58%'
+    },
+    featuredHeading: {
         flexDirection: 'row',
-        backgroundColor: 'red',
-        //width: '100%'
+        justifyContent: 'space-between',
+        width: '100%',
     },
-    // featText1: {
-    //     marginLeft: 4,
-    //     marginTop: 2,
-    //     flex: 1,
-    //     //flexDirection: 'row',
-    //     // backgroundColor: 'red',
-    //     width: '100%'
-    // },
+    featuredHeadingText: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        flexWrap: 'wrap',
+        width: '80%'
+    },
+    featuredHeadingIcon: {
+        width: '20%',
+        alignItems: 'flex-end'
+    },
+    featuredDescription: {
+        // marginVertical: 5
+    },
+    featuredDescriptionText: {
+        fontSize: 14
+    },
+    featuredDescriptionBottomText: {
+        fontSize: 12,
+        textAlign: 'right'
+    }
 })
 
 
