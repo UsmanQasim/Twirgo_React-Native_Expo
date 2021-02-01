@@ -4,25 +4,38 @@ import { SafeAreaView, View, Text, ImageBackground, Image, TouchableOpacity, Sty
 import { ScrollView } from 'react-native-gesture-handler';
 import { AntDesign, EvilIcons, Octicons, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import CalendarPicker from 'react-native-calendar-picker';
+import CheckBox from 'react-native-check-box'
 
 export class BookingScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {
             selectedStartDate: null,
+            timeButtons: [
+                { key: 0, name: '08 to 09 am' },
+                { key: 1, name: '09 to 10 am' },
+                { key: 2, name: '10 to 11 am' },
+                { key: 3, name: '12 to 1 am' }
+            ],
+            selectedTimeIndex: 0,
+            groundButtons: [
+                { key: 0, name: 'Grass' },
+                { key: 1, name: 'Clay' },
+            ],
+            selectedGroundIndex: 0
         };
-        this.onDateChange = this.onDateChange.bind(this);
+
     }
 
-    static navigationOptions = {
-        header: false
-    }
-
-    onDateChange(date) {
+    onDateChange = date => {
         this.setState({
             selectedStartDate: date,
         });
     }
+
+    updateTime = (updatedTime) => { this.setState({ selectedTimeIndex: updatedTime }); }
+    updateGround = (updatedGround) => { this.setState({ selectedGroundIndex: updatedGround }); }
+
     render() {
         const { selectedStartDate } = this.state;
         const startDate = selectedStartDate ? selectedStartDate.toString() : '';
@@ -33,7 +46,7 @@ export class BookingScreen extends Component {
                 <View style={Styles.headerContainer}>
                     <View style={Styles.headerTopContainer}>
                         <TouchableOpacity style={Styles.headerBtn}>
-                            <Octicons name="three-bars" size={40} color="white" />
+                            <Ionicons name="chevron-back" size={30} color="green" />
                         </TouchableOpacity>
                         <Text style={Styles.headerText}>Twirgo</Text>
                         <View style={Styles.headerIconContainer}>
@@ -57,10 +70,67 @@ export class BookingScreen extends Component {
                 <View style={Styles.mainSectionContainer}>
                     <ScrollView style={Styles.mainSection}>
                         <View style={Styles.scrollLabelContainer}>
-                            <Text>Select Date</Text>
+                            <AntDesign name="calendar" size={24} color="green" />
+                            <Text style={{ marginLeft: 5 }}>Select Date</Text>
                         </View>
                         <CalendarPicker
                             onDateChange={this.onDateChange}
+                        />
+                        <View style={Styles.scrollLabelContainer}>
+                            <Ionicons name="time-outline" size={25} color="green"></Ionicons>
+                            <Text style={{ marginLeft: 5 }}>Select Time</Text>
+                        </View>
+                        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                            {this.state.timeButtons.map(
+                                ({ key, name }) => {
+                                    return (
+                                        <TouchableOpacity
+                                            key={key}
+                                            style={(this.state.selectedTimeIndex == key) ? Styles.btnClicked : Styles.btnOG}
+                                            onPress={() => this.updateTime(key)}
+                                        >
+                                            <Text style={(this.state.selectedTimeIndex == key) ? Styles.btnTextClicked : Styles.btnText}>{name}</Text>
+                                        </TouchableOpacity>
+                                    );
+                                }
+                            )}
+                        </ScrollView>
+                        <View style={Styles.scrollLabelContainer}>
+                            <AntDesign name="minussquareo" size={25} color="green" />
+                            <Text style={{ marginLeft: 5 }}>Ground</Text>
+                        </View>
+                        <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+                            {this.state.groundButtons.map(
+                                ({ key, name }) => {
+                                    return (
+                                        <TouchableOpacity
+                                            key={key}
+                                            style={(this.state.selectedGroundIndex == key) ? Styles.btnClicked : Styles.btnOG}
+                                            onPress={() => this.updateGround(key)}
+                                        >
+                                            <Text style={(this.state.selectedGroundIndex == key) ? Styles.btnTextClicked : Styles.btnText}>{name}</Text>
+                                        </TouchableOpacity>
+                                    );
+                                }
+                            )}
+                        </ScrollView>
+                        <View style={Styles.scrollLabelContainer}>
+                            <MaterialCommunityIcons name="human-greeting" size={25} color="green" />
+                            <Text style={{ marginLeft: 5 }}>NUMBER OF PLAYERS</Text>
+                        </View>
+                        <TextInput
+                            style={Styles.inputField}
+                            value={this.state.numberOfPlayers}
+                            onChangeText={text => this.state.numberOfPlayers = text}
+                        />
+                        <View style={Styles.scrollLabelContainer}>
+                            <MaterialCommunityIcons name="human-greeting" size={25} color="green" />
+                            <Text style={{ marginLeft: 5 }}>SELECT A PARTNER</Text>
+                        </View>
+                        <TextInput
+                            style={Styles.selectPartnerInputField}
+                            value={this.state.numberOfPlayers}
+                            onChangeText={text => this.state.numberOfPlayers = text}
                         />
                     </ScrollView>
                 </View>
@@ -135,7 +205,8 @@ const Styles = StyleSheet.create({
         height: 50,
         width: '100%',
         paddingLeft: 20,
-        justifyContent: 'center'
+        flexDirection: 'row',
+        alignItems: 'center'
     },
     sportsContainer: {
         width: '100%',
@@ -212,6 +283,60 @@ const Styles = StyleSheet.create({
         width: 150,
         height: 100,
     },
+
+
+    btnOG: {
+        backgroundColor: 'white',
+        borderColor: '#10C578',
+        borderWidth: 2,
+        height: 45,
+        width: 100,
+        alignItems: 'center',
+        borderRadius: 5,
+        marginLeft: 12.5,
+        marginRight: 12.5,
+        justifyContent: 'center',
+    },
+
+    btnClicked: {
+        backgroundColor: '#09ec88',
+        borderColor: '#10C578',
+        borderWidth: 2,
+        height: 45,
+        width: 100,
+        alignItems: 'center',
+        borderRadius: 5,
+        marginLeft: 12.5,
+        marginRight: 12.5,
+        justifyContent: 'center',
+    },
+
+    btnText: {
+        fontSize: 15,
+        color: 'black',
+    },
+    btnTextClicked: {
+        fontSize: 15,
+        color: 'white'
+    },
+
+    inputField: {
+        borderBottomWidth: 2,
+        borderColor: 'grey',
+        marginBottom: 10,
+        width: 45,
+        height: 30,
+        marginLeft: 35
+    },
+
+    selectPartnerInputField: {
+        borderBottomWidth: 2,
+        borderColor: 'grey',
+        marginBottom: 10,
+        width: '70%',
+        height: 30,
+        marginLeft: 35
+    }
 })
 
 export default BookingScreen
