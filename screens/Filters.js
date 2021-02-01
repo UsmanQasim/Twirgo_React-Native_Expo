@@ -58,7 +58,7 @@ export class Filters extends Component {
     render() {
         return (
             <KeyboardAvoidingView
-                behavior={Platform.OS === "ios" ? "padding" : "height"}
+                behavior={ "padding"}
                 style={Styles.container}
             >
                 <SafeAreaView style={Styles.container}>
