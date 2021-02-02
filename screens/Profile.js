@@ -6,12 +6,6 @@ import { AntDesign, EvilIcons, Octicons, Ionicons, MaterialCommunityIcons } from
 
 
 class Profile extends Component {
-    static navigationOptions = {
-        header: false
-    }
-    state = {
-        firstQuery: '',
-    };
     render() {
         return (
 
@@ -38,67 +32,93 @@ class Profile extends Component {
                             </TouchableHighlight>
                         </View>
                     </View>
-                    {/*  <View style={Styles.headerCurveContainer}>
-
-                    </View>*/}
                 </View>
-                <View style={Styles.IdMain}>
-                    <View style={Styles.InvSpace}></View>
-                    <View style={Styles.IdDetails}>
-                        <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#80889c' }}>John Smith</Text>
-                        <Text style={{ fontSize: 12, color: '#afb8c4' }}>johney@gmail.com</Text>
+                <View style={Styles.mainContent}>
+                    <View style={Styles.IdMain}>
+                        <View style={Styles.InvSpace}></View>
+                        <View style={Styles.IdDetails}>
+                            <Text style={{ fontSize: 22, fontWeight: 'bold', color: '#80889c' }}>John Smith</Text>
+                            <Text style={{ fontSize: 12, color: '#afb8c4' }}>johney@gmail.com</Text>
+                        </View>
                     </View>
-                </View>
-                <View style={Styles.stats}>
-                    <View>
-                        <Text style={Styles.nhead}>Bookings</Text>
-                        <Text style={Styles.numbers}>22</Text></View>
-                    <View>
-                        <Text style={Styles.nhead}>Favourites</Text>
-                        <Text style={Styles.numbers}>338</Text></View>
-                    <View>
-                        <Text style={Styles.nhead}>Requests</Text>
-                        <Text style={Styles.numbers}>50</Text></View>
-                </View>
-                <View style={Styles.helpContainer}>
-                    <View><Text>Help</Text></View>
-                    <View>
-                        <ScrollView
-                            horizontal={true}
-                            showsHorizontalScrollIndicator={false}
+                    <View style={Styles.stats}>
+                        <View>
+                            <Text style={Styles.nhead}>Bookings</Text>
+                            <Text style={Styles.numbers}>22</Text></View>
+                        <View>
+                            <Text style={Styles.nhead}>Favourites</Text>
+                            <Text style={Styles.numbers}>338</Text></View>
+                        <View>
+                            <Text style={Styles.nhead}>Requests</Text>
+                            <Text style={Styles.numbers}>50</Text></View>
+                    </View>
+                    <View style={Styles.featuredContainer}>
+                        <TouchableOpacity
+                            style={Styles.featuredItemContainer}
                         >
-                            <TouchableOpacity style={Styles.svhButton}>
-                                <Text style={Styles.svhbuttonText}>Boxing</Text>
-                            </TouchableOpacity>
+                            <Image
+                                style={Styles.featuredImage}
+                                source={require('../assets/backgroundimage.jpg')}
+                            ></Image>
+                            <View style={Styles.featuredItemDetails}>
+                                <View style={Styles.featuredHeading}>
+                                    <Text style={Styles.featuredHeadingText}>CityLife Tennis </Text>
+                                </View>
+                                <View style={Styles.featuredDescription}>
+                                    <Text style={Styles.featuredDescriptionText}>Address </Text>
+                                    <View style={{ flexDirection: 'row' }}>
+                                        <AntDesign name="star" size={20} color="orange" />
+                                        <Text style={{ fontSize: 17 }}>4.6</Text>
+                                    </View>
 
-                            <TouchableOpacity style={Styles.svhButton}>
-                                <Text style={Styles.svhbuttonText}>Karate</Text>
-                            </TouchableOpacity>
+                                </View>
 
-                            <TouchableOpacity style={Styles.svhButton}>
-                                <Text style={Styles.svhbuttonText}>Dance</Text>
-                            </TouchableOpacity>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={Styles.featuredItemContainer}
+                        >
+                            <Image
+                                style={Styles.featuredImage}
+                                source={require('../assets/backgroundimage.jpg')}
+                            ></Image>
+                            <View style={Styles.featuredItemDetails}>
+                                <View style={Styles.featuredHeading}>
+                                    <Text style={Styles.featuredHeadingText}>CityLife Tennis </Text>
+                                </View>
+                                <View style={Styles.featuredDescription}>
+                                    <Text style={Styles.featuredDescriptionText}>Address </Text>
+                                    <View style={{ flexDirection: 'row' }}>
+                                        <AntDesign name="star" size={20} color="orange" />
+                                        <Text style={{ fontSize: 17 }}>4.6</Text>
+                                    </View>
 
-                            <TouchableOpacity style={Styles.svhButton}>
-                                <Text style={Styles.svhbuttonText}>Sports</Text>
-                            </TouchableOpacity>
+                                </View>
 
-                            <TouchableOpacity style={Styles.svhButton}>
-                                <Text style={Styles.svhbuttonText}>Sports</Text>
-                            </TouchableOpacity>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                            style={Styles.featuredItemContainer}
+                        >
+                            <Image
+                                style={Styles.featuredImage}
+                                source={require('../assets/backgroundimage.jpg')}
+                            ></Image>
+                            <View style={Styles.featuredItemDetails}>
+                                <View style={Styles.featuredHeading}>
+                                    <Text style={Styles.featuredHeadingText}>CityLife Tennis </Text>
+                                </View>
+                                <View style={Styles.featuredDescription}>
+                                    <Text style={Styles.featuredDescriptionText}>Address </Text>
+                                    <View style={{ flexDirection: 'row' }}>
+                                        <AntDesign name="star" size={20} color="orange" />
+                                        <Text style={{ fontSize: 17 }}>4.6</Text>
+                                    </View>
 
-                            <TouchableOpacity style={Styles.svhButton}>
-                                <Text style={Styles.svhbuttonText}>Sports</Text>
-                            </TouchableOpacity>
+                                </View>
 
-                            <TouchableOpacity style={Styles.svhButton}>
-                                <Text style={Styles.svhbuttonText}>Sports</Text>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity style={Styles.svhButton}>
-                                <Text style={Styles.svhbuttonText}>Sports</Text>
-                            </TouchableOpacity>
-                        </ScrollView>
+                            </View>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </SafeAreaView>
@@ -113,67 +133,42 @@ const Styles = StyleSheet.create({
         flexDirection: 'column',
     },
     headerContainer: {
-        flex: 1 / 1.2,
+        flex: 1,
         width: '100%',
-        backgroundColor: '#ffcd00',
         display: 'flex',
         justifyContent: 'space-between',
         flexDirection: 'column',
         borderBottomLeftRadius: 15,
         borderBottomRightRadius: 15,
-
+        backgroundColor: '#ffcd00'
     },
     headerTopContainer: {
         paddingTop: 35,
         flex: 0.6,
-        //backgroundColor: 'red',
         justifyContent: 'space-evenly',
         alignItems: 'center',
         flexDirection: 'row',
-
     },
     headerImageContainer: {
-        //paddingTop: 50,
         flex: 0.3,
-        //justifyContent: 'flex-end',
-        //backgroundColor: 'pink',
         alignItems: 'center',
     },
-    // headerTopContainer: {
-    //     paddingTop: 10,
-    //    // flex: 4,
-    //     backgroundColor: '#ffcd00',
-    //     width: '100%',
-    //     display: 'flex',
-    //     flexDirection: 'row',
-    //     justifyContent: 'space-evenly',
-    //     alignItems: 'center',
-    //     borderBottomLeftRadius: 15,
-    //     borderBottomRightRadius: 15,
-    // },
     headerBtn: {
         justifyContent: 'center',
         alignItems: 'center'
     },
     headerText: {
         fontSize: 22,
-        // fontWeight: 'bold',
     },
     headerIconContainer: {
         display: 'flex',
         flexDirection: 'row'
     },
     ImageContainer: {
-       // borderRadius: 150 / 2,
-       //marginTop: 5,
-       width: '30%',
-       alignItems:'center',
-       justifyContent: 'center',
-       //backgroundColor : 'yellow', 
-       //width: '20%',
-       // borderWidth: 2,
+        width: '30%',
+        alignItems: 'center',
+        justifyContent: 'center',
     },
-
     Image: {
         width: 110,
         height: 110,
@@ -182,38 +177,26 @@ const Styles = StyleSheet.create({
         borderWidth: 4,
         borderColor: "#393d47",
     },
-    // headerCurveContainer: {
-    //     flex: 4,
-    //     width: '100%',
-    //     backgroundColor: '#ffcd00',
-    //     alignItems: 'center',
-    //     borderBottomLeftRadius: 15,
-    //     borderBottomRightRadius: 15,
-    // },
-
+    mainContent: {
+        flex: 5
+    },
     IdMain: {
         flex: 0.4,
-        //backgroundColor: 'red',
         justifyContent: 'center',
     },
     InvSpace: {
-        borderWidth: 1,
         flex: 1,
     },
-
     IdDetails: {
         marginTop: 0,
         flex: 1,
         justifyContent: 'center',
-        borderWidth: 1,
-        //backgroundColor: 'blue',
         alignItems: 'center',
     },
     stats: {
         flexDirection: 'row',
         flex: 0.2,
-       // backgroundColor: 'green',
-        justifyContent: 'space-between',
+        justifyContent: 'space-evenly',
         marginLeft: 5,
         marginRight: 5,
     },
@@ -227,10 +210,6 @@ const Styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
     },
-    helpContainer: {
-        flex:1,
-       // backgroundColor: 'purple',
-    },
     svhButton: {
         backgroundColor: '#FFCD00',
         height: 45,
@@ -243,6 +222,53 @@ const Styles = StyleSheet.create({
     },
     svhbuttonText: {
         fontSize: 18,
+    },
+    featuredContainer: {
+        justifyContent: 'center',
+        width: '100%',
+        marginVertical: 1
+    },
+    featuredItemContainer: {
+        margin: 10,
+        height: 100,
+        borderRadius: 5,
+        flexDirection: 'row',
+        backgroundColor: 'lightgrey',
+    },
+    featuredImage: {
+        borderRadius: 5,
+        resizeMode: 'cover',
+        padding: 5,
+        width: '40%',
+        height: 100,
+    },
+    featuredItemDetails: {
+        width: '58%'
+    },
+    featuredHeading: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        width: '100%',
+    },
+    featuredHeadingText: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        flexWrap: 'wrap',
+        width: '95%',
+    },
+    featuredHeadingIcon: {
+        width: '20%',
+        alignItems: 'flex-end'
+    },
+    featuredDescription: {
+        // marginVertical: 5
+    },
+    featuredDescriptionText: {
+        fontSize: 14
+    },
+    featuredDescriptionBottomText: {
+        fontSize: 12,
+        textAlign: 'right'
     },
 
 })

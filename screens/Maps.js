@@ -24,17 +24,23 @@ export default class Maps extends Component {
             >
                 <View style={Styles.headerContainer}>
                     <View style={Styles.headerTopContainer}>
-                        <TouchableOpacity style={Styles.headerBtn}>
+                        <TouchableOpacity
+                            style={Styles.headerBtn}
+                            onPress={() => this.props.navigation.navigate('Home')}
+                        >
                             <Ionicons name="chevron-back" size={30} color="#10C578" />
                         </TouchableOpacity>
                         <Text style={Styles.headerText}>Map- Gym</Text>
                         <View style={Styles.headerIconContainer}>
-                            <TouchableOpacity style={Styles.headerBtn}>
+                            <TouchableOpacity
+                                style={Styles.headerBtn}
+                                onPress={() => this.props.navigation.openDrawer()}
+                            >
                                 <Ionicons name="person" size={30} color="#10C578" />
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={{flex:1,backgroundColor: '#ffcd00'}}></View>
+                    <View style={{ flex: 1, backgroundColor: '#ffcd00' }}></View>
                     <View style={Styles.headerSearchContainer}>
                         <Searchbar
                             style={Styles.headerSearchBar}
@@ -114,7 +120,7 @@ const Styles = StyleSheet.create({
         width: '100%',
         height: 500,
         justifyContent: 'center',
-       // paddingTop: 20,
+        // paddingTop: 20,
         alignItems: 'center',
         backgroundColor: '#ffcd00'
     },

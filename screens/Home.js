@@ -6,9 +6,6 @@ import { AntDesign, EvilIcons, Octicons, Ionicons, MaterialCommunityIcons } from
 
 
 class Home extends Component {
-    static navigationOptions = {
-        header: false
-    }
     state = {
         firstQuery: '',
     };
@@ -474,7 +471,7 @@ const Styles = StyleSheet.create({
     featuredHeadingText: {
         fontSize: 17,
         fontWeight: 'bold',
-        flexWrap: 'wrap',
+        flexWrap: 'wrap',   
         width: '80%'
     },
     featuredHeadingIcon: {

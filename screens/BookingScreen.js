@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Searchbar } from 'react-native-paper';
 import { SafeAreaView, View, Text, ImageBackground, Image, TouchableOpacity, StyleSheet, TextInput, Alert } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
+import { LinearGradient } from 'expo-linear-gradient';
 import { AntDesign, EvilIcons, Octicons, Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 import CalendarPicker from 'react-native-calendar-picker';
-import CheckBox from 'react-native-check-box'
 
 export class BookingScreen extends Component {
     constructor(props) {
@@ -45,10 +45,16 @@ export class BookingScreen extends Component {
             <SafeAreaView style={Styles.container}>
                 <View style={Styles.headerContainer}>
                     <View style={Styles.headerTopContainer}>
-                        <TouchableOpacity style={Styles.headerBtn}>
+                        <TouchableOpacity
+                            style={Styles.headerBtn}
+                            onPress={() => this.props.navigation.navigate('BusinessPage')}
+                        >
                             <Ionicons name="chevron-back" size={30} color="green" />
                         </TouchableOpacity>
-                        <Text style={Styles.headerText}>Twirgo</Text>
+                        <View style={Styles.headerText}>
+                            <Text style={{fontSize: 18}}>Court</Text>
+                            <Text style={{fontSize: 12}}>Address</Text>
+                        </View>
                         <View style={Styles.headerIconContainer}>
                             <TouchableOpacity style={Styles.headerBtn}>
                                 <AntDesign name="message1" size={30} color="white" />
@@ -58,14 +64,6 @@ export class BookingScreen extends Component {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <View style={Styles.headerSearchContainer}>
-                        <Searchbar
-                            style={Styles.headerSearchBar}
-                            placeholder="Search"
-                            onChangeText={query => { this.setState({ firstQuery: query }); }}
-                        />
-                    </View>
-                    <View style={Styles.headerCurveContainer}></View>
                 </View>
                 <View style={Styles.mainSectionContainer}>
                     <ScrollView style={Styles.mainSection}>
@@ -132,6 +130,39 @@ export class BookingScreen extends Component {
                             value={this.state.numberOfPlayers}
                             onChangeText={text => this.state.numberOfPlayers = text}
                         />
+                        <TouchableOpacity style={Styles.featuredItemContainer}>
+                            <Image
+                                style={Styles.featuredImage}
+                                source={require('../assets/backgroundimage.jpg')}
+                            ></Image>
+                            <View style={Styles.featuredItemDetails}>
+                                <View style={Styles.featuredHeading}>
+                                    <Text style={Styles.featuredHeadingText}>CityLife Tennis</Text>
+                                    <Text style={Styles.featuredHeadingText}>Address</Text>
+                                </View>
+                                <View style={Styles.featuredDescription}>
+                                    <Text style={Styles.featuredDescriptionText}>10 September 2020</Text>
+                                    <Text style={Styles.featuredDescriptionText}>08:00 to 09:00</Text>
+                                    <Text style={Styles.featuredDescriptionText}>Partner</Text>
+                                    <Text style={Styles.featuredDescriptionText}>Marc Williams</Text>
+
+                                    <Text style={Styles.featuredDescriptionBottomText}>Splitting</Text>
+                                    <Text style={{ fontSize: 18, textAlign: 'right' }}>€10/HOUR</Text>
+                                </View>
+
+                            </View>
+                        </TouchableOpacity>
+                        <View style={Styles.btnLast}>
+                            <LinearGradient
+                                style={{ borderRadius: 5 }}
+                                colors={['#10C578', '#10C578', '#10965B']} start={{ x: 0, y: 1 }}
+                                end={{ x: 1, y: 1 }}
+                            >
+                                <TouchableOpacity style={Styles.applyBtn} onPress={() => this.props.navigation.navigate('BookingConfirmed')}>
+                                    <Text style={Styles.applyBtnText}>Book</Text>
+                                </TouchableOpacity>
+                            </LinearGradient>
+                        </View>
                     </ScrollView>
                 </View>
 
@@ -147,15 +178,15 @@ const Styles = StyleSheet.create({
         flexDirection: 'column',
     },
     headerContainer: {
-        flex: 3 / 2,
         width: '100%',
-        display: 'flex',
         flexDirection: 'column',
+        backgroundColor: '#ffcd00',
+        borderBottomLeftRadius: 5,
+        borderBottomRightRadius: 5,
     },
     headerTopContainer: {
         paddingTop: 10,
-        flex: 4,
-        backgroundColor: '#ffcd00',
+        flex: 2,
         width: '100%',
         display: 'flex',
         flexDirection: 'row',
@@ -174,26 +205,8 @@ const Styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'row'
     },
-    headerSearchContainer: {
-        flex: 3 / 2,
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#ffcd00'
-    },
-    headerSearchBar: {
-        width: '80%',
-        height: 40
-    },
-    headerCurveContainer: {
-        flex: 1,
-        width: '100%',
-        backgroundColor: '#ffcd00',
-        borderBottomLeftRadius: 15,
-        borderBottomRightRadius: 15,
-    },
     mainSectionContainer: {
-        flex: 5
+        flex: 4
     },
     mainSection: {
         height: '100%',
@@ -336,7 +349,66 @@ const Styles = StyleSheet.create({
         width: '70%',
         height: 30,
         marginLeft: 35
-    }
+    },
+
+    featuredItemContainer: {
+        margin: 10,
+        height: 150,
+        borderRadius: 5,
+        flexDirection: 'row',
+        backgroundColor: 'lightgrey',
+    },
+    featuredImage: {
+        borderRadius: 5,
+        resizeMode: 'cover',
+        padding: 5,
+        width: '40%',
+        height: 150,
+    },
+    featuredItemDetails: {
+        width: '58%'
+    },
+    featuredHeading: {
+        justifyContent: 'space-between',
+        width: '100%',
+    },
+    featuredHeadingText: {
+        fontSize: 17,
+        flexWrap: 'wrap',
+        width: '80%'
+    },
+    featuredHeadingIcon: {
+        width: '20%',
+        alignItems: 'flex-end'
+    },
+    featuredDescription: {
+        // marginVertical: 5
+    },
+    featuredDescriptionText: {
+        fontSize: 12
+    },
+    featuredDescriptionBottomText: {
+        fontSize: 10,
+        textAlign: 'right'
+    },
+    btnLast: {
+        marginTop: 15,
+        marginBottom: 5,
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    applyBtn: {
+
+        width: 220,
+        height: 35,
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 10,
+    },
+    applyBtnText: {
+        color: 'white',
+        fontSize: 18,
+    },
 })
 
 export default BookingScreen

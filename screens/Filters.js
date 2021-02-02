@@ -58,14 +58,17 @@ export class Filters extends Component {
     render() {
         return (
             <KeyboardAvoidingView
-                behavior={ "padding"}
+                behavior={"padding"}
                 style={Styles.container}
             >
                 <SafeAreaView style={Styles.container}>
 
                     <View style={Styles.headerContainer}>
                         <View style={Styles.headerTopContainer}>
-                            <TouchableOpacity style={Styles.headerBtn}>
+                            <TouchableOpacity
+                                style={Styles.headerBtn}
+                                onPress={() => this.props.navigation.navigate('Map')}
+                            >
                                 <Ionicons name="chevron-back" size={40} color="#10C578" style={{ alignSelf: 'flex-end' }} />
                             </TouchableOpacity>
                             <View style={Styles.headerIconContainer}>

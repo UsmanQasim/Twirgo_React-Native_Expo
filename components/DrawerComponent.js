@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, StyleSheet, Image, Text, Linking } from 'react-native';
+import { SafeAreaView, View, StyleSheet, Image, Text, TouchableOpacity } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 
 const DrawerComponent = (props) => {

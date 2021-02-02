@@ -19,10 +19,8 @@ const DrawerNavigator = () => {
             drawerStyle={{ backgroundColor: 'transparent' }}
         >
 
-        
-        <Drawer.Screen name="Home" component={HomeStackNavigator} />
-        <Drawer.Screen name="Profile" component={ProfileStackNavigator} />
-            
+            <Drawer.Screen name="Profile" component={ProfileStackNavigator} />
+            <Drawer.Screen name="Home" component={HomeStackNavigator} />
 
         </Drawer.Navigator >
     );
